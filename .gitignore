@@ -1,0 +1,24 @@
+# .NET build output
+backend/src/**/bin/
+backend/src/**/obj/
+backend/tests/**/bin/
+backend/tests/**/obj/
+
+# .NET user files
+*.user
+*.suo
+.vs/
+*.userprefs
+.idea/
+
+# Node.js / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.env.local
+
+# macOS
+.DS_Store
+
+# Docker
+docker-compose.override.yml
