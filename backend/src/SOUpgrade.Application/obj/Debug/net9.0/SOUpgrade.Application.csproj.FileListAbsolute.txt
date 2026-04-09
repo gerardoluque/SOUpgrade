@@ -1,0 +1,16 @@
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/SOUpgrade.Application.csproj.AssemblyReference.cache
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/SOUpgrade.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/SOUpgrade.Application.AssemblyInfoInputs.cache
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/SOUpgrade.Application.AssemblyInfo.cs
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/SOUpgrade.Application.csproj.CoreCompileInputs.cache
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/SOUpgrade.Application.sourcelink.json
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/bin/Debug/net9.0/SOUpgrade.Application.deps.json
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/bin/Debug/net9.0/SOUpgrade.Application.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/bin/Debug/net9.0/SOUpgrade.Application.pdb
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/bin/Debug/net9.0/SOUpgrade.Domain.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/bin/Debug/net9.0/SOUpgrade.Domain.pdb
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/SOUpgrad.C35CCAD6.Up2Date
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/SOUpgrade.Application.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/refint/SOUpgrade.Application.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/SOUpgrade.Application.pdb
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/obj/Debug/net9.0/ref/SOUpgrade.Application.dll

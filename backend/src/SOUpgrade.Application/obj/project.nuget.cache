@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "dgSpecHash": "MYxlF9Nzw6c=",
+  "success": true,
+  "projectFilePath": "/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/SOUpgrade.Application.csproj",
+  "expectedPackageFiles": [
+    "/home/runner/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
+    "/home/runner/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
+    "/home/runner/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "/home/runner/.nuget/packages/mediatr/12.4.1/mediatr.12.4.1.nupkg.sha512",
+    "/home/runner/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.5/microsoft.extensions.dependencyinjection.abstractions.10.0.5.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/home/runner/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'AutoMapper' 13.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
+      "projectPath": "/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/SOUpgrade.Application.csproj",
+      "warningLevel": 1,
+      "filePath": "/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.Application/SOUpgrade.Application.csproj",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
+}
