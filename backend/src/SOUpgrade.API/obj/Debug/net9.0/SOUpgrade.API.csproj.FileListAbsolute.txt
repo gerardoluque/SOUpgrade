@@ -177,3 +177,4 @@
 /home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.API/obj/Debug/net9.0/SOUpgrade.API.pdb
 /home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.API/obj/Debug/net9.0/SOUpgrade.API.genruntimeconfig.cache
 /home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.API/obj/Debug/net9.0/ref/SOUpgrade.API.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/src/SOUpgrade.API/bin/Debug/net9.0/System.Diagnostics.DiagnosticSource.dll

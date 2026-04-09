@@ -119,3 +119,9 @@
 /home/runner/work/SOUpgrade/SOUpgrade/backend/tests/SOUpgrade.Application.Tests/obj/Debug/net9.0/SOUpgrade.Application.Tests.pdb
 /home/runner/work/SOUpgrade/SOUpgrade/backend/tests/SOUpgrade.Application.Tests/obj/Debug/net9.0/SOUpgrade.Application.Tests.genruntimeconfig.cache
 /home/runner/work/SOUpgrade/SOUpgrade/backend/tests/SOUpgrade.Application.Tests/obj/Debug/net9.0/ref/SOUpgrade.Application.Tests.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/tests/SOUpgrade.Application.Tests/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/tests/SOUpgrade.Application.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/tests/SOUpgrade.Application.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/tests/SOUpgrade.Application.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/tests/SOUpgrade.Application.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/home/runner/work/SOUpgrade/SOUpgrade/backend/tests/SOUpgrade.Application.Tests/bin/Debug/net9.0/System.Diagnostics.DiagnosticSource.dll
