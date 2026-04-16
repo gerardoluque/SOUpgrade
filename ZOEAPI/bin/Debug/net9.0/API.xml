@@ -1,0 +1,1437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="T:API.Application.Core.Extensions.ExtensionPlaceHolder">
+            <summary>
+            Contiene métodos de extensión para trabajar con cadenas.
+            </summary>
+        </member>
+        <member name="M:API.Application.Core.Extensions.ExtensionPlaceHolder.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            Indica si una cadena es nula, vacía o solo espacios en blanco.
+            </summary>
+        </member>
+        <member name="M:API.Application.Core.Extensions.ExtensionPlaceHolder.IsNotNullOrWhiteSpace(System.String)">
+            <summary>
+            Indica si una cadena no es nula, vacía o solo espacios en blanco.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:API.Application.Seguridad.Grupos.Commands.DeleteGrupo.Handler">
+            <summary>
+            Desactiva un grupo en Azure AD y actualiza su estado en la base de datos.
+            </summary>
+            <param name="graphManager"></param>
+            <param name="context"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:API.Application.Seguridad.Grupos.Commands.DeleteGrupo.Handler.#ctor(API.Application.Core.IGraphManager,API.Persistence.AppDbContext,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{API.Application.Seguridad.Grupos.Commands.DeleteGrupo.Handler})">
+            <summary>
+            Desactiva un grupo en Azure AD y actualiza su estado en la base de datos.
+            </summary>
+            <param name="graphManager"></param>
+            <param name="context"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:API.Application.Seguridad.Grupos.Commands.DeleteGrupo.Handler.Handle(API.Application.Seguridad.Grupos.Commands.DeleteGrupo.Command,System.Threading.CancellationToken)">
+            <summary>
+            Desactiva un grupo en Azure AD y actualiza su estado en la base de datos.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:API.Application.Seguridad.Usuarios.Validators.UserValidator">
+            <summary>
+            Provides validation rules for the <see cref="T:API.Application.Seguridad.Usuarios.Commands.CreateUser.Command"/> class.
+            </summary>
+        </member>
+        <member name="M:API.Application.Seguridad.Usuarios.Validators.UserValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:API.Application.Seguridad.Usuarios.Validators.UserValidator"/> class.
+            </summary>
+        </member>
+        <member name="M:API.Application.Seguridad.Usuarios.Validators.UserValidator.BeAValidName(System.String)">
+            <summary>
+            Validates that the provided name does not contain numbers or special characters.
+            </summary>
+            <param name="name">The name to validate.</param>
+            <returns><c>true</c> if the name is valid; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:API.Controllers.AuditLogs.AuditLogController">
+            <summary>
+            Controlador para gestionar los registros de auditoría.
+            </summary>
+        </member>
+        <member name="M:API.Controllers.AuditLogs.AuditLogController.GetFilteredAuditLogs(API.Application.AuditLogs.Queries.AuditLogQueries.GetFilteredAuditLogs.Query)">
+            <summary>
+            Obtiene los registros de auditoría.
+            </summary>
+            <param name="query" >Consulta para filtrar los registros de auditoría.</param>
+            <returns>Una lista de registros de auditoría.</returns>
+            <response code="200">Devuelve la lista de registros de auditoría.</response>
+            <response code="400">Si los parámetros de entrada son inválidos.</response>
+            <response code="500">Si ocurre un error en el servidor.</response>
+        </member>
+        <member name="T:API.Controllers.Seguridad.CorporacionController">
+            <summary>
+            Controlador para gestionar las corporaciones.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:API.Controllers.Seguridad.CorporacionController.GetCorporaciones" -->
+        <member name="T:API.Controllers.Seguridad.GruposController">
+            <summary>
+            Controlador para gestionar los grupos de Azure AD.
+            </summary>
+        </member>
+        <member name="M:API.Controllers.Seguridad.GruposController.#ctor(Microsoft.Extensions.Logging.ILogger{API.Controllers.Seguridad.UsersController})">
+            <summary>
+            Controlador para gestionar los grupos de Azure AD.
+            </summary>
+        </member>
+        <member name="M:API.Controllers.Seguridad.GruposController.GetGrupos">
+            <summary>
+            Obtiene la lista de grupos de Azure AD.
+            </summary>
+            <returns>Lista de grupos de Azure AD.</returns>
+            <response code="200">Lista de grupos obtenida correctamente.</response>
+            <response code="404">No se encontraron grupos.</response>
+            <response code="500">Error interno del servidor.</response>
+        </member>
+        <member name="M:API.Controllers.Seguridad.GruposController.GetGrupo(System.String)">
+            <summary>
+            Obtiene un grupo de Azure AD por su ID.
+            </summary>
+            <param name="id" >El ID del grupo de Azure AD.</param>
+            <returns>El grupo de Azure AD</returns>
+            <response code="200">Grupo obtenido correctamente.</response>
+            <response code="404">No se encontro el grupo</response>
+            <response code="500">Error interno del servidor.</response>
+        </member>
+        <member name="M:API.Controllers.Seguridad.GruposController.CreateGrupo(API.Application.Seguridad.Grupos.Commands.CreateGrupo.Command)">
+            <summary>
+            Crea un nuevo grupo de Azure AD.
+            </summary>
+            <param name="command">El comando para crear el grupo.</param>
+            <returns>El ID del grupo creado.</returns>
+            <response code="200">Grupo creado correctamente.</response>
+            <response code="400">Error al crear el grupo.</response>
+            <response code="500">Error interno del servidor.</response> 
+        </member>
+        <member name="M:API.Controllers.Seguridad.GruposController.UpdateGrupo(System.String,API.Application.Seguridad.Grupos.Commands.UpdateGrupo.Command)">
+            <summary>
+            Actualiza la informacion de un grupo de Azure AD.
+            </summary>
+            <param name="id">El ID del grupo de Azure AD.</param>
+            <returns>El grupo de Azure AD</returns>
+            <response code="200">Grupo actualizado correctamente.</response>
+            <response code="400">Error al actualizar el grupo.</response>
+            <response code="404">No se encontro el grupo</response>
+            <response code="500">Error interno del servidor.</response>
+        </member>
+        <member name="M:API.Controllers.Seguridad.GruposController.DeleteGrupo(System.String)">
+            <summary>
+            Inactiva un grupo de Azure AD.
+            </summary>
+            <param name="id">El ID del grupo de Azure AD.</param>
+            <returns></returns>
+            <response code="200">Grupo inactivado correctamente.</response>
+            <response code="400">Error al inactivar el grupo.</response>
+            <response code="404">No se encontro el grupo</response>
+            <response code="500">Error interno del servidor.</response>
+        </member>
+        <member name="T:API.Domain.Anexos.Anexo">
+            <summary>
+            Entidad para almacenar anexos multimedia o archivos relacionados a pacientes o usuarios.
+            </summary>
+        </member>
+        <member name="T:API.Domain.Anexos.TiposLink">
+            <summary>
+            Enumerador para el tipo de relación del anexo.
+            </summary>
+        </member>
+        <member name="T:API.Domain.Anexos.TiposAnexo">
+            <summary>
+            Enumerador para el tipo de anexo.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.Area.FechaCreacion">
+            <summary>
+            Fecha en la que se creó el paciente.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.Area.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del paciente.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.EstadoCivil.FechaCreacion">
+            <summary>
+            Fecha en la que se creó el registro.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.EstadoCivil.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del registro.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.NivelEducativo.FechaCreacion">
+            <summary>
+            Fecha en la que se creó el registro.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.NivelEducativo.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del registro.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.Puesto.FechaCreacion">
+            <summary>
+            Fecha en la que se creó el paciente.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.Puesto.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del paciente.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.Region.FechaCreacion">
+            <summary>
+            Fecha en la que se creó el paciente.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.Region.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del paciente.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.ServicioSalud.FechaCreacion">
+            <summary>
+            Fecha en la que se creó el paciente.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Catalogos.ServicioSalud.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del paciente.
+            </summary>
+        </member>
+        <member name="M:API.Domain.Core.DomainHelper.GenerarRFC(System.String,System.String,System.String,System.DateTime)">
+            <summary>
+            Genera el RFC conforme a las últimas regulaciones del SAT en México.
+            </summary>
+            <param name="nombre">Nombre(s) del paciente</param>
+            <param name="primerApellido">Primer apellido</param>
+            <param name="segundoApellido">Segundo apellido (puede ser null)</param>
+            <param name="fechaNacimiento">Fecha de nacimiento</param>
+            <returns>RFC generado</returns>
+        </member>
+        <member name="M:API.Domain.Core.DomainHelper.GenerarCURP(System.String,System.String,System.String,System.DateTime,System.Char,System.String)">
+            <summary>
+            Genera el CURP conforme a las últimas regulaciones del RENAPO/SAT en México.
+            </summary>
+            <param name="nombre">Nombre(s) del paciente</param>
+            <param name="primerApellido">Primer apellido</param>
+            <param name="segundoApellido">Segundo apellido (puede ser null)</param>
+            <param name="fechaNacimiento">Fecha de nacimiento</param>
+            <param name="sexo">Sexo: 'H' (hombre) o 'M' (mujer)</param>
+            <param name="entidadNacimiento">Clave de la entidad federativa de nacimiento (2 letras, ej. 'DF', 'NL')</param>
+            <returns>CURP generado</returns>
+        </member>
+        <member name="P:API.Domain.Seguridad.AppIdentityRole.Value">
+            <summary>
+            Valor del rol en Azure AD, por ejemplo, "rol.ejemplo".
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.AppIdentityRole.Activo">
+            <summary>
+            Indica si el rol está activo o no.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.AppIdentityRole.FechaCreacion">
+            <summary>
+            Fecha en la que se creó el rol.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.AppIdentityRole.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del rol.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:API.Domain.Seguridad.AppIdentityRole.TipoRol" -->
+        <member name="T:API.Domain.Seguridad.AppUserIdentity">
+            <summary>
+            Representa la identidad de un usuario en la aplicación, extendiendo la funcionalidad de IdentityUser.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.AppUserIdentity.Usuario">
+            <summary>
+            Relación uno a uno con la entidad Usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.AppUserIdentity.FechaCreacion">
+            <summary>
+            Fecha en la que se creó la identidad del usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.AppUserIdentity.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización de la identidad del usuario.
+            </summary>
+        </member>
+        <member name="T:API.Domain.Seguridad.Corporacion">
+            <summary>
+            Representa una corporación en el sistema.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Corporacion.Id">
+            <summary>
+            Identificador único de la corporación.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Corporacion.Nombre">
+            <summary>
+            Nombre de la corporación.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Corporacion.Descripcion">
+            <summary>
+            Descripción de la corporación.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Corporacion.Logo">
+            <summary>
+            Logo de la corporación.
+            </summary>
+        </member>
+        <member name="T:API.Domain.Seguridad.Grupo">
+            <summary>
+            Representa un grupo de usuarios en el sistema.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Grupo.Id">
+            <summary>
+            Identificador único del grupo.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Grupo.Nombre">
+            <summary>
+            Nombre del grupo.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Grupo.Descr">
+            <summary>
+            Descripción del grupo.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Grupo.Activo">
+            <summary>
+            Indica si el grupo está activo.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Grupo.FechaCreacion">
+            <summary>
+            Fecha en la que se creó el grupo.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Grupo.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del grupo.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Grupo.Usuarios">
+            <summary>
+            Colección de usuarios asociados al grupo.
+            </summary>
+        </member>
+        <member name="T:API.Domain.Seguridad.Permiso">
+            <summary>
+            Representa un permiso asignado a un usuario o rol.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Permiso.Id">
+            <summary>
+            Identificador único del permiso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Permiso.UsuarioId">
+            <summary>
+            Identificador del usuario asociado al permiso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Permiso.RolId">
+            <summary>
+            Identificador del rol asociado al permiso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Permiso.ProcesoId">
+            <summary>
+            Identificador del proceso asociado al permiso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Permiso.Acceso">
+            <summary>
+            Nivel de acceso otorgado por el permiso. "lectura", "escritura"
+            </summary>
+        </member>
+        <member name="T:API.Domain.Seguridad.Proceso">
+            <summary>
+            Representa un proceso en el sistema.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.Id">
+            <summary>
+            Identificador único del proceso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.Descr">
+            <summary>
+            Descripción del proceso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.Tipo">
+            <summary>
+            Tipo del proceso. P: Proceso, S: Subproceso
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.Icono">
+            <summary>
+            Icono asociado al proceso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.Activo">
+            <summary>
+            Indica si el proceso está activo o no.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.Ruta">
+            <summary>
+            Ruta del proceso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.ProcesoPadreId">
+            <summary>
+            Identificador del proceso padre, si aplica.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.FechaCreacion">
+            <summary>
+            Fecha de creación del proceso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del proceso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.Acciones">
+            <summary>
+            Acciones asociadas al proceso, como "Crear", "Editar", "Eliminar".
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Proceso.Subprocesos">
+            <summary>
+            Colección de procesos hijos (subprocesos).
+            </summary>
+        </member>
+        <member name="T:API.Domain.Seguridad.Rol">
+            <summary>
+            Representa un rol en el sistema.
+            </summary>
+        </member>
+        <member name="T:API.Domain.Seguridad.RolProceso">
+            <summary>
+            Representa la relación entre un rol y un proceso.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.RolProceso.RolId">
+            <summary>
+            Identificador del rol asociado.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.RolProceso.ProcesoId">
+            <summary>
+            Identificador del proceso asociado.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.RolProceso.Proceso">
+            <summary>
+            Proceso asociado al rol.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.RolProceso.FechaCreacion">
+            <summary>
+            Fecha de creación de la relación.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.RolProceso.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización de la relación.
+            </summary>
+        </member>
+        <member name="T:API.Domain.Seguridad.UserRefreshToken">
+            <summary>
+            Refresh token persistence model (hashed token stored, raw token only sent once to client).
+            </summary>
+        </member>
+        <member name="T:API.Domain.Seguridad.Usuario">
+            <summary>
+            Representa un usuario en el sistema.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.Id">
+            <summary>
+            Identificador único del usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.Nombre">
+            <summary>
+            Nombre del usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.PrimerApellido">
+            <summary>
+            Primer apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.SegundoApellido">
+            <summary>
+            Segundo apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.Telefono">
+            <summary>
+            Teléfono del usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.Activo">
+            <summary>
+            Indica si el usuario está activo.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.TiempoInactividad">
+            <summary>
+            Tiempo de inactividad en minutos.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.FechaCreacion">
+            <summary>
+            Fecha de creación del usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.FechaUltimaActualizacion">
+            <summary>
+            Fecha de la última actualización del usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.GrupoId">
+            <summary>
+            Identificador del grupo al que pertenece el usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.RolId">
+            <summary>
+            Rol del usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.Rol">
+            <summary>
+            Navegación al rol asociado al usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.EsUsuarioAD">
+            <summary>
+            Indica si el usuario es un administrador de dominio (AD).
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.AppUserIdentityId">
+            <summary>
+            Identificador de la identidad del usuario en la aplicación.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.UsuarioCorporaciones">
+            <summary>
+            Relación uno a muchos con la entidad UsuarioGrupo.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.Atributos">
+            <summary>
+            Contiene un JSON dinámico con atributos personalizados que varían según el rol del usuario.
+            El contenido y la estructura del JSON dependen del tipo de rol (propiedad TipoDeRol) asignado al usuario.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.Usuario.Calendario">
+            <summary>
+            Contiene un JSON con informacion de configuracion del calendario
+            El contenido y la estructura del JSON dependen del tipo de rol (propiedad TipoDeRol) asignado al usuario.
+            </summary>
+        </member>
+        <member name="M:API.Domain.Seguridad.Usuario.EsAtributosJsonValido">
+            <summary>
+            Valida si el contenido de la propiedad Atributos es un JSON válido.
+            </summary>
+            <returns>True si es un JSON válido, false en caso contrario.</returns>
+        </member>
+        <member name="T:API.Domain.Seguridad.UsuarioCorporacion">
+            <summary>
+            Representa la relación entre un usuario y una corporación.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.UsuarioCorporacion.UsuarioId">
+            <summary>
+            Identificador del usuario asociado.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.UsuarioCorporacion.Usuario">
+            <summary>
+            Usuario asociado a la corporación.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.UsuarioCorporacion.CorporacionId">
+            <summary>
+            Identificador de la corporación asociada.
+            </summary>
+        </member>
+        <member name="P:API.Domain.Seguridad.UsuarioCorporacion.Corporacion">
+            <summary>
+            Corporación asociada al usuario.
+            </summary>
+        </member>
+        <member name="T:API.Infrastructure.Authorization.AuthorizeByTipoRolAttribute">
+            <summary>
+            Atributo personalizado para autorizar acceso basado en el tipo de rol del usuario.
+            Este atributo verifica los claims TipoRol del token JWT para determinar el acceso.
+            </summary>
+            <example>
+            <code>
+            // A nivel de controller - todos los endpoints requieren estos tipos de rol
+            [AuthorizeByTipoRol(TipoRoles.AdministradorSistema, TipoRoles.Administrativo)]
+            public class UsersController : BaseApiController { }
+            
+            // A nivel de acción - solo este endpoint requiere este tipo de rol
+            [HttpDelete("{id}")]
+            [AuthorizeByTipoRol(TipoRoles.AdministradorSistema)]
+            public async Task&lt;ActionResult&gt; DeleteUser(string id) { }
+            </code>
+            </example>
+        </member>
+        <member name="M:API.Infrastructure.Authorization.AuthorizeByTipoRolAttribute.#ctor(API.Domain.Seguridad.TipoRoles[])">
+            <summary>
+            Constructor que inicializa el atributo con los tipos de rol permitidos.
+            </summary>
+            <param name="tiposRol">Uno o más tipos de rol que tienen acceso al recurso.</param>
+            <exception cref="T:System.ArgumentException">Se lanza si no se especifica ningún tipo de rol.</exception>
+        </member>
+        <member name="T:API.Infrastructure.Authorization.TipoRolAuthorizationHandler">
+            <summary>
+            Handler que verifica si el usuario actual tiene un claim TipoRol con el tipo de rol requerido.
+            </summary>
+        </member>
+        <member name="T:API.Infrastructure.Authorization.TipoRolRequirement">
+            <summary>
+            Requirement que especifica qué tipos de roles tienen acceso a un recurso.
+            </summary>
+        </member>
+        <member name="P:API.Infrastructure.Authorization.TipoRolRequirement.TiposRolPermitidos">
+            <summary>
+            Array de tipos de rol permitidos para acceder al recurso.
+            </summary>
+        </member>
+        <member name="M:API.Infrastructure.Authorization.TipoRolRequirement.#ctor(API.Domain.Seguridad.TipoRoles[])">
+            <summary>
+            Constructor que inicializa el requirement con los tipos de rol permitidos.
+            </summary>
+            <param name="tiposRolPermitidos">Uno o más tipos de rol que tienen acceso.</param>
+        </member>
+        <member name="M:API.Persistence.CorporacionDbInitializer.SeedData(API.Persistence.CorporacionDbContext,API.Persistence.AppDbContext,System.String)">
+            <summary>
+            Siembra datos base por corporación. Se asegura de no duplicar datos si ya existen.
+            </summary>
+        </member>
+        <member name="T:API.Persistence.Migrations.MantMedicos">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.MantMedicos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.MantMedicos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.MantMedicos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.MantMedicosCalendario">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.MantMedicosCalendario.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.MantMedicosCalendario.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.MantMedicosCalendario.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.MoveClinicaEspecialidadToCorporacion_DropFromApp">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.MoveClinicaEspecialidadToCorporacion_DropFromApp.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.MoveClinicaEspecialidadToCorporacion_DropFromApp.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.MoveClinicaEspecialidadToCorporacion_DropFromApp.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.AtencionMedica_1">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.AtencionMedica_1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.AtencionMedica_1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.AtencionMedica_1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.ConexionBDSistemaCorporacion_1">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.ConexionBDSistemaCorporacion_1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.ConexionBDSistemaCorporacion_1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.ConexionBDSistemaCorporacion_1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.AddEstadoCivilAndNivelEducativoCatalogos">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.AddEstadoCivilAndNivelEducativoCatalogos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.AddEstadoCivilAndNivelEducativoCatalogos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.AddEstadoCivilAndNivelEducativoCatalogos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.RefreshJWT_Token">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.RefreshJWT_Token.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.RefreshJWT_Token.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.RefreshJWT_Token.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.BorrarColumnas_Corporacion">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.BorrarColumnas_Corporacion.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.BorrarColumnas_Corporacion.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.BorrarColumnas_Corporacion.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.CorporacionLogoDerecho">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.CorporacionLogoDerecho.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.CorporacionLogoDerecho.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.CorporacionLogoDerecho.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AdecuacionesPaciente">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AdecuacionesPaciente.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AdecuacionesPaciente.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AdecuacionesPaciente.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AdecuacionesDbCorporacion">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AdecuacionesDbCorporacion.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AdecuacionesDbCorporacion.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AdecuacionesDbCorporacion.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.PacienteRFCNull">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.PacienteRFCNull.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.PacienteRFCNull.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.PacienteRFCNull.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.MoveClinicaEspecialidadToCorporacion_AddToCorporacion">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.MoveClinicaEspecialidadToCorporacion_AddToCorporacion.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.MoveClinicaEspecialidadToCorporacion_AddToCorporacion.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.MoveClinicaEspecialidadToCorporacion_AddToCorporacion.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AuditLogs_ModifAtencionMedica">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AuditLogs_ModifAtencionMedica.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AuditLogs_ModifAtencionMedica.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AuditLogs_ModifAtencionMedica.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.ExpedienteMedico_1">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.ExpedienteMedico_1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.ExpedienteMedico_1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.ExpedienteMedico_1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.ExpedienteMedico_2">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.ExpedienteMedico_2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.ExpedienteMedico_2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.ExpedienteMedico_2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.ExpedienteMedico_3">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.ExpedienteMedico_3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.ExpedienteMedico_3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.ExpedienteMedico_3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_1">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_2">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_3">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_4">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_4.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_4.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_5">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_5.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_5.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_5.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_6">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_6.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_6.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_6.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_7">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_7.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_7.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_7.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_8">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_8.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_8.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_8.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_9">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_9.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_9.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_9.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_10">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_10.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_10.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_10.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.InitialInventario">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.InitialInventario.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.InitialInventario.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.InitialInventario.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AddCantidadEsperadaYFechaCaptura">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AddCantidadEsperadaYFechaCaptura.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AddCantidadEsperadaYFechaCaptura.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_11">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_11.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_11.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_11.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_12">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_12.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_12.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_12.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_13">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_13.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_13.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_13.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_14">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_14.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_14.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_14.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AddSecuenciaFolioRecetaAndUnidadPrefijo">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AddSecuenciaFolioRecetaAndUnidadPrefijo.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AddSecuenciaFolioRecetaAndUnidadPrefijo.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AddSecuenciaFolioRecetaAndUnidadPrefijo.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_15">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_15.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_15.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_15.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.CreateRecetasView">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.CreateRecetasView.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.CreateRecetasView.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.CreateRecetasView.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.UpdateRecetasView">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_16">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_16.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_16.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_16.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.UpdateRecetasView_1">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView_1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView_1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView_1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.UpdateRecetasView_2">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView_2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView_2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView_2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.UpdateRecetasView_3">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView_3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView_3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.UpdateRecetasView_3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_17">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_17.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_17.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_17.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_18">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_18.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_18.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_18.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_19">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_19.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_19.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_19.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_20">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_20.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_20.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_20.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_21">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_21.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_21.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_21.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_22">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_22.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_22.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_22.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_23">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_23.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_23.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_23.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_24">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_24.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_24.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_24.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_25">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_25.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_25.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_25.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_26">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_26.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_26.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_26.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_27">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_27.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_27.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_27.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_28">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_28.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_28.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_28.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_29">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_29.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_29.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_29.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_30">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_30.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_30.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_30.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_31">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_31.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_31.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_31.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_32">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_32.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_32.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_32.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Persistence.Migrations.Corporacion.AtencionMedica_33">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_33.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_33.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Persistence.Migrations.Corporacion.AtencionMedica_33.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Migrations.InitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.InitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.InitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Migrations.RemovePermisoUsuarioRelation">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.RemovePermisoUsuarioRelation.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.RemovePermisoUsuarioRelation.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.RemovePermisoUsuarioRelation.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Migrations.PermisosProcesoAccion">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.PermisosProcesoAccion.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.PermisosProcesoAccion.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.PermisosProcesoAccion.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Migrations.PermisosUsuariosCambiosCampos">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.PermisosUsuariosCambiosCampos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.PermisosUsuariosCambiosCampos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.PermisosUsuariosCambiosCampos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Migrations.AddAppIdentRole_RemoveRolMetadata">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.AddAppIdentRole_RemoveRolMetadata.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.AddAppIdentRole_RemoveRolMetadata.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.AddAppIdentRole_RemoveRolMetadata.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API.Migrations.AddEsUsuarioADColumn">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.AddEsUsuarioADColumn.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.AddEsUsuarioADColumn.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API.Migrations.AddEsUsuarioADColumn.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:IAntivirusScanner.ScanAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>
+            Escanea el archivo y retorna true si está limpio, false si está infectado.
+            </summary>
+        </member>
+    </members>
+</doc>

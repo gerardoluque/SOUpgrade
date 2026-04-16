@@ -1,0 +1,124 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace API.Persistence.Migrations.Corporacion
+{
+    /// <inheritdoc />
+    public partial class UpdateRecetasView : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            // Eliminar la vista existente
+            migrationBuilder.Sql("DROP VIEW IF EXISTS dbo.vw_Recetas");
+
+            // Recrear la vista con PacienteId y sin MedicoNombreCompleto
+            migrationBuilder.Sql(@"
+                CREATE VIEW dbo.vw_Recetas
+                AS
+                SELECT 
+                    ema.Id AS ExpedienteMedicoAtencionId,
+                    ema.ExpedienteMedicoId,
+                    ema.AtencionId,
+                    ema.MedicoId,
+                    ema.ClinicaId,
+                    ema.FechaCreacion,
+                    CAST(receta.[key] AS INT) AS RecetaIndex,
+                    CAST(JSON_VALUE(receta.value, '$.Folio') AS BIGINT) AS Folio,
+                    JSON_VALUE(receta.value, '$.FolioClinica') AS FolioClinica,
+                    CAST(medicamento.[key] AS INT) AS MedicamentoIndex,
+                    CAST(JSON_VALUE(medicamento.value, '$.id') AS INT) AS MedicamentoId,
+                    JSON_VALUE(medicamento.value, '$.sustanciaActiva') AS SustanciaActiva,
+                    JSON_VALUE(medicamento.value, '$.indicacion') AS Indicacion,
+                    JSON_VALUE(medicamento.value, '$.cantidad') AS Cantidad,
+                    JSON_VALUE(medicamento.value, '$.tipo') AS Tipo,
+                    m.Existencias,
+                    m.PrecioUnitarioConIVA,
+                    m.PrecioUnitarioSinIVA,
+                    m.ClaveArticulo,
+                    m.PresentacionId,
+                    mp.Nombre AS Presentacion,
+                    m.ClasificacionId,
+                    mc.Nombre AS Clasificacion,
+                    m.Concentracion,
+                    m.DescripcionArticulo,
+                    m.UnidadMedidaId,
+                    mu.Nombre AS UnidadMedida,
+                    em.PacienteId,
+                    CONCAT(p.Nombre, ' ', p.PrimerApellido, ' ', ISNULL(p.SegundoApellido, '')) AS PacienteNombreCompleto
+                FROM dbo.ExpedientesMedicoAtenciones ema
+                CROSS APPLY OPENJSON(ema.RecetaJson, '$.Receta') AS receta
+                CROSS APPLY OPENJSON(receta.value, '$.Medicamentos') AS medicamento
+                LEFT JOIN dbo.Medicamentos m 
+                    ON m.Id = CAST(JSON_VALUE(medicamento.value, '$.id') AS INT)
+                LEFT JOIN dbo.MedicamentoClasificaciones AS mc 
+                    ON m.ClasificacionId = mc.Id
+                LEFT JOIN dbo.MedicamentoPresentaciones mp 
+                    ON m.PresentacionId = mp.Id
+                LEFT JOIN dbo.MedicamentoUnidadMedidas mu 
+                    ON m.UnidadMedidaId = mu.Id
+                LEFT JOIN dbo.ExpedientesMedicos em
+                    ON ema.ExpedienteMedicoId = em.Id
+                LEFT JOIN dbo.Pacientes p
+                    ON em.PacienteId = p.Id
+                WHERE ema.RecetaJson IS NOT NULL 
+                    AND ema.RecetaJson <> '{}'
+            ");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            // Eliminar la vista modificada
+            migrationBuilder.Sql("DROP VIEW IF EXISTS dbo.vw_Recetas");
+
+            // Recrear la vista original
+            migrationBuilder.Sql(@"
+                CREATE VIEW dbo.vw_Recetas
+                AS
+                SELECT 
+                    ema.Id AS ExpedienteMedicoAtencionId,
+                    ema.ExpedienteMedicoId,
+                    ema.AtencionId,
+                    ema.MedicoId,
+                    ema.ClinicaId,
+                    ema.FechaCreacion,
+                    CAST(receta.[key] AS INT) AS RecetaIndex,
+                    CAST(JSON_VALUE(receta.value, '$.Folio') AS BIGINT) AS Folio,
+                    JSON_VALUE(receta.value, '$.FolioClinica') AS FolioClinica,
+                    CAST(medicamento.[key] AS INT) AS MedicamentoIndex,
+                    CAST(JSON_VALUE(medicamento.value, '$.id') AS INT) AS MedicamentoId,
+                    JSON_VALUE(medicamento.value, '$.sustanciaActiva') AS SustanciaActiva,
+                    JSON_VALUE(medicamento.value, '$.indicacion') AS Indicacion,
+                    JSON_VALUE(medicamento.value, '$.cantidad') AS Cantidad,
+                    JSON_VALUE(medicamento.value, '$.tipo') AS Tipo,
+                    m.Existencias,
+                    m.PrecioUnitarioConIVA,
+                    m.PrecioUnitarioSinIVA,
+                    m.ClaveArticulo,
+                    m.PresentacionId,
+                    mp.Nombre AS Presentacion,
+                    m.ClasificacionId,
+                    mc.Nombre AS Clasificacion,
+                    m.Concentracion,
+                    m.DescripcionArticulo,
+                    m.UnidadMedidaId,
+                    mu.Nombre AS UnidadMedida 
+                FROM dbo.ExpedientesMedicoAtenciones ema
+                CROSS APPLY OPENJSON(ema.RecetaJson, '$.Receta') AS receta
+                CROSS APPLY OPENJSON(receta.value, '$.Medicamentos') AS medicamento
+                LEFT JOIN dbo.Medicamentos m 
+                    ON m.Id = CAST(JSON_VALUE(medicamento.value, '$.id') AS INT)
+                LEFT JOIN dbo.MedicamentoClasificaciones AS mc 
+                    ON m.ClasificacionId = mc.Id
+                LEFT JOIN dbo.MedicamentoPresentaciones mp 
+                    ON m.PresentacionId = mp.Id
+                LEFT JOIN dbo.MedicamentoUnidadMedidas mu 
+                    ON m.UnidadMedidaId = mu.Id 
+                WHERE ema.RecetaJson IS NOT NULL 
+                    AND ema.RecetaJson <> '{}'
+            ");
+        }
+    }
+}

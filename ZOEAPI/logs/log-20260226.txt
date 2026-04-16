@@ -1,0 +1,1387 @@
+2026-02-26 21:48:36.060 -08:00 [INF] User profile is available. Using 'C:\Users\Dell\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-26 21:48:38.528 -08:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-26 21:48:38.552 -08:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-02-26 21:48:38.602 -08:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-02-26 21:48:38.765 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-02-26 21:48:38.811 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-26 21:48:38.826 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-26 21:48:38.862 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-02-26 21:48:38.936 -08:00 [INF] No migrations were applied. The database is already up to date.
+2026-02-26 21:48:38.979 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-02-26 21:48:39.721 -08:00 [INF] Executed DbCommand (52ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-26 21:48:39.939 -08:00 [INF] Executed DbCommand (31ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-26 21:48:39.956 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-26 21:48:39.962 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-26 21:48:39.969 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-26 21:48:40.009 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Grupos] AS [g]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.037 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.056 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Usuarios] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.072 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Procesos] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.085 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [RolesProcesos] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.099 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Permisos] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.117 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Corporaciones] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.146 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UsuarioCorporaciones] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.157 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [EntidadFederativas] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.174 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Sistemas] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.187 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [BasesDatos] AS [b]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.200 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [CorporacionSistemaBDs] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.216 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__estado_Nombre_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [EstadosCiviles] AS [e]
+        WHERE [e].[Nombre] = @__estado_Nombre_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.221 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__estado_Nombre_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [EstadosCiviles] AS [e]
+        WHERE [e].[Nombre] = @__estado_Nombre_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.226 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__estado_Nombre_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [EstadosCiviles] AS [e]
+        WHERE [e].[Nombre] = @__estado_Nombre_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.235 -08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__estado_Nombre_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [EstadosCiviles] AS [e]
+        WHERE [e].[Nombre] = @__estado_Nombre_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.240 -08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__estado_Nombre_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [EstadosCiviles] AS [e]
+        WHERE [e].[Nombre] = @__estado_Nombre_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.244 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__estado_Nombre_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [EstadosCiviles] AS [e]
+        WHERE [e].[Nombre] = @__estado_Nombre_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.252 -08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__estado_Nombre_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [EstadosCiviles] AS [e]
+        WHERE [e].[Nombre] = @__estado_Nombre_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.256 -08:00 [INF] Executed DbCommand (0ms) [Parameters=[@__estado_Nombre_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [EstadosCiviles] AS [e]
+        WHERE [e].[Nombre] = @__estado_Nombre_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.325 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [NivelesEducativos] AS [n]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-26 21:48:40.861 -08:00 [INF] Now listening on: https://localhost:5001
+2026-02-26 21:48:41.310 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-26 21:48:41.324 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-02-26 21:48:41.392 -08:00 [INF] Hosting environment: Development
+2026-02-26 21:48:41.434 -08:00 [INF] Content root path: C:\Users\Dell\OneDrive\Documentos\GitHub\BaseWebApp\API
+2026-02-26 21:48:41.536 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:41.577 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 265.579ms
+2026-02-26 21:48:41.601 -08:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 54
+2026-02-26 21:48:41.633 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:41.811 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:41.993 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:42.001 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.Login (API)'
+2026-02-26 21:48:42.041 -08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(API.DTOs.Seguridad.LoginDto) on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 21:48:42.192 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-26 21:48:42.556 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-26 21:48:42.573 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-26 21:48:42.871 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 512), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 512), @p8='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserRefreshTokens] ([Created], [CreatedByIp], [Expires], [ReasonRevoked], [ReplacedByTokenHash], [Revoked], [RevokedByIp], [TokenHash], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-02-26 21:48:42.931 -08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType12`4[[<>f__AnonymousType13`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-26 21:48:42.954 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.Login (API) in 902.9921ms
+2026-02-26 21:48:42.956 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.Login (API)'
+2026-02-26 21:48:42.965 -08:00 [INF] Handled POST /api/auth/login responded 200 in 1324.6124 ms
+2026-02-26 21:48:42.979 -08:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 1377.7262ms
+2026-02-26 21:48:43.010 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 21:48:43.051 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:43.053 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 42.629ms
+2026-02-26 21:48:43.057 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 21:48:43.071 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:43.206 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:43.209 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:43.214 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:48:43.226 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 21:48:43.666 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 21:48:43.705 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:48:43.710 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 479.11ms
+2026-02-26 21:48:43.713 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:48:43.715 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 642.5696 ms
+2026-02-26 21:48:43.718 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 661.35ms
+2026-02-26 21:48:43.726 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - null null
+2026-02-26 21:48:43.732 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:43.734 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - 204 null null 7.8378ms
+2026-02-26 21:48:43.737 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - application/json null
+2026-02-26 21:48:43.743 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:43.751 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:43.753 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:43.755 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.UsersController.GetUser (API)'
+2026-02-26 21:48:43.765 -08:00 [INF] Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[API.DTOs.Seguridad.UserDto]] GetUser(System.String) on controller API.Controllers.Seguridad.UsersController (API).
+2026-02-26 21:48:44.117 -08:00 [INF] Executed DbCommand (70ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Activo], [s].[AppUserIdentityId], [s].[Atributos], [s].[Calendario], [s].[EsUsuarioAD], [s].[FechaCreacion], [s].[FechaUltimaActualizacion], [s].[GrupoId], [s].[Nombre], [s].[PrimerApellido], [s].[RolId], [s].[SegundoApellido], [s].[Telefono], [s].[TiempoInactividad], [s].[Id0], [u0].[UsuarioId], [u0].[CorporacionId], [s].[AccessFailedCount], [s].[ConcurrencyStamp], [s].[Email], [s].[EmailConfirmed], [s].[FechaCreacion0], [s].[FechaUltimaActualizacion0], [s].[LockoutEnabled], [s].[LockoutEnd], [s].[NormalizedEmail], [s].[NormalizedUserName], [s].[PasswordHash], [s].[PhoneNumber], [s].[PhoneNumberConfirmed], [s].[SecurityStamp], [s].[TwoFactorEnabled], [s].[UserName]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion] AS [FechaCreacion0], [a].[FechaUltimaActualizacion] AS [FechaUltimaActualizacion0], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [Usuarios] AS [u]
+    LEFT JOIN [AspNetUsers] AS [a] ON [u].[AppUserIdentityId] = [a].[Id]
+    WHERE [u].[Id] = @__request_Id_0
+) AS [s]
+LEFT JOIN [UsuarioCorporaciones] AS [u0] ON [s].[Id] = [u0].[UsuarioId]
+ORDER BY [s].[Id], [s].[Id0], [u0].[UsuarioId]
+2026-02-26 21:48:44.257 -08:00 [INF] Executed DbCommand (17ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Acceso], [p].[ProcesoId], [p].[RolId], [p].[UsuarioId]
+FROM [Permisos] AS [p]
+WHERE [p].[UsuarioId] = @__user_Id_0
+2026-02-26 21:48:44.304 -08:00 [INF] Executing OkObjectResult, writing value of type 'API.DTOs.Seguridad.UserDto'.
+2026-02-26 21:48:44.322 -08:00 [INF] Executed action API.Controllers.Seguridad.UsersController.GetUser (API) in 554.001ms
+2026-02-26 21:48:44.325 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.UsersController.GetUser (API)'
+2026-02-26 21:48:44.330 -08:00 [INF] Handled GET /api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 responded 200 in 584.7974 ms
+2026-02-26 21:48:44.333 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - 200 null application/json; charset=utf-8 596.6549ms
+2026-02-26 21:48:44.348 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - null null
+2026-02-26 21:48:44.353 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:44.355 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - 204 null null 6.5974ms
+2026-02-26 21:48:44.358 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - application/json null
+2026-02-26 21:48:44.369 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:44.370 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:44.372 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:44.373 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.RolController.GetRol (API)'
+2026-02-26 21:48:44.382 -08:00 [INF] Route matched with {action = "GetRol", controller = "Rol"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[API.DTOs.Seguridad.ApplicationRoleDto]] GetRol(System.String) on controller API.Controllers.Seguridad.RolController (API).
+2026-02-26 21:48:44.425 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Id] = @__request_Id_0
+2026-02-26 21:48:44.502 -08:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-02-26 21:48:44.697 -08:00 [INF] Executed DbCommand (40ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FechaCreacion], [a0].[FechaUltimaActualizacion], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-02-26 21:48:45.003 -08:00 [INF] Executed DbCommand (15ms) [Parameters=[@__appUserIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad]
+FROM [Usuarios] AS [u]
+WHERE [u].[AppUserIdentityId] IN (
+    SELECT [a].[value]
+    FROM OPENJSON(@__appUserIds_0) WITH ([value] nvarchar(450) '$') AS [a]
+)
+2026-02-26 21:48:45.070 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__ToString_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Acciones], [p].[Activo], [p].[Descr], [p].[FechaCreacion], [p].[FechaUltimaActualizacion], [p].[Icono], [p].[ProcesoPadreId], [p].[Ruta], [p].[SistemaId], [p].[Tipo]
+FROM [RolesProcesos] AS [r]
+INNER JOIN [Procesos] AS [p] ON [r].[ProcesoId] = [p].[Id]
+WHERE [r].[RolId] = @__ToString_0
+2026-02-26 21:48:45.133 -08:00 [INF] Executing OkObjectResult, writing value of type 'API.DTOs.Seguridad.ApplicationRoleDto'.
+2026-02-26 21:48:45.184 -08:00 [INF] Executed action API.Controllers.Seguridad.RolController.GetRol (API) in 798.6038ms
+2026-02-26 21:48:45.186 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.RolController.GetRol (API)'
+2026-02-26 21:48:45.188 -08:00 [INF] Handled GET /api/rol/0ce09768-9d22-4286-a855-e09ca14d189f responded 200 in 818.5771 ms
+2026-02-26 21:48:45.192 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - 200 null application/json; charset=utf-8 834.1144ms
+2026-02-26 21:48:52.761 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento?take=200 - null null
+2026-02-26 21:48:52.783 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:52.785 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento?take=200 - 204 null null 24.2453ms
+2026-02-26 21:48:52.789 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento?take=200 - application/json null
+2026-02-26 21:48:52.864 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:52.868 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:52.869 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:52.871 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.List (API)'
+2026-02-26 21:48:52.888 -08:00 [INF] Route matched with {action = "List", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean], System.Nullable`1[System.Int32]) on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:48:52.989 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__corporacionId_0='?' (Size = 450), @__ToInt16_1='?' (DbType = Int16)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CorporacionId], [c].[SistemaId], [c].[BaseDatosId], [b].[Id], [b].[DatabaseName], [b].[Descripcion], [b].[Nombre], [b].[Password], [b].[Port], [b].[ServerName], [b].[UserName]
+FROM [CorporacionSistemaBDs] AS [c]
+INNER JOIN [BasesDatos] AS [b] ON [c].[BaseDatosId] = [b].[Id]
+WHERE [c].[CorporacionId] = @__corporacionId_0 AND [c].[SistemaId] = @__ToInt16_1
+2026-02-26 21:48:55.436 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Clinica.MedicamentoDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:48:55.478 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.List (API) in 2580.0851ms
+2026-02-26 21:48:55.481 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.List (API)'
+2026-02-26 21:48:55.483 -08:00 [INF] Handled GET /api/Medicamento responded 200 in 2616.5827 ms
+2026-02-26 21:48:55.486 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento?take=200 - 200 null application/json; charset=utf-8 2696.8143ms
+2026-02-26 21:48:57.144 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 21:48:57.217 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.220 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 76.3422ms
+2026-02-26 21:48:57.235 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 21:48:57.276 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.279 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:57.280 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:57.282 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:48:57.284 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 21:48:57.295 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 21:48:57.300 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:48:57.303 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 15.4536ms
+2026-02-26 21:48:57.305 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:48:57.310 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 31.8240 ms
+2026-02-26 21:48:57.313 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 78.8443ms
+2026-02-26 21:48:57.320 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - null null
+2026-02-26 21:48:57.330 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.332 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - 204 null null 11.2598ms
+2026-02-26 21:48:57.334 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - application/json null
+2026-02-26 21:48:57.352 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.354 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:57.356 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:57.358 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:48:57.363 -08:00 [INF] Route matched with {action = "GetFarmacia", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarmacia() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:48:57.464 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.Farmacia, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:48:57.469 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetFarmacia (API) in 103.1458ms
+2026-02-26 21:48:57.472 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:48:57.475 -08:00 [INF] Handled GET /api/Medicamento/catalogos/farmacia responded 200 in 121.5054 ms
+2026-02-26 21:48:57.478 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - 200 null application/json; charset=utf-8 143.8318ms
+2026-02-26 21:48:57.501 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - null null
+2026-02-26 21:48:57.502 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/presentacion - null null
+2026-02-26 21:48:57.502 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/clasificacion - null null
+2026-02-26 21:48:57.502 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/unidadMedida - null null
+2026-02-26 21:48:57.537 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoControl - null null
+2026-02-26 21:48:57.545 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.549 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.563 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.575 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/presentacion - 204 null null 72.2958ms
+2026-02-26 21:48:57.584 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoControl - 204 null null 79.9802ms
+2026-02-26 21:48:57.553 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.564 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - 204 null null 62.6722ms
+2026-02-26 21:48:57.559 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.574 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - application/json null
+2026-02-26 21:48:57.583 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/presentacion - application/json null
+2026-02-26 21:48:57.593 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoControl - application/json null
+2026-02-26 21:48:57.603 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/clasificacion - 204 null null 100.8167ms
+2026-02-26 21:48:57.605 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/clasificacion - application/json null
+2026-02-26 21:48:57.611 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/unidadMedida - 204 null null 108.2046ms
+2026-02-26 21:48:57.613 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/unidadMedida - application/json null
+2026-02-26 21:48:57.614 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.618 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.624 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.633 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.647 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:48:57.649 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:57.650 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:57.651 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:57.653 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:57.654 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:48:57.657 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:57.659 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:57.660 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:57.662 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:57.663 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:48:57.665 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoArticulo (API)'
+2026-02-26 21:48:57.666 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetPresentacion (API)'
+2026-02-26 21:48:57.668 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoControl (API)'
+2026-02-26 21:48:57.669 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetClasificacion (API)'
+2026-02-26 21:48:57.671 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetUnidadMedida (API)'
+2026-02-26 21:48:57.679 -08:00 [INF] Route matched with {action = "GetTipoArticulo", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTipoArticulo() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:48:57.687 -08:00 [INF] Route matched with {action = "GetPresentacion", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPresentacion() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:48:57.688 -08:00 [INF] Route matched with {action = "GetTipoControl", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTipoControl() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:48:57.691 -08:00 [INF] Route matched with {action = "GetClasificacion", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetClasificacion() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:48:57.699 -08:00 [INF] Route matched with {action = "GetUnidadMedida", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUnidadMedida() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:48:58.040 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoTipoControl, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:48:58.063 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoTipoArticulo, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:48:58.065 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetTipoControl (API) in 317.3629ms
+2026-02-26 21:48:58.068 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetTipoArticulo (API) in 346.9027ms
+2026-02-26 21:48:58.070 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoControl (API)'
+2026-02-26 21:48:58.077 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoArticulo (API)'
+2026-02-26 21:48:58.084 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoClasificacion, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:48:58.088 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoPresentacion, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:48:58.091 -08:00 [INF] Handled GET /api/Medicamento/catalogos/tipoControl responded 200 in 439.6606 ms
+2026-02-26 21:48:58.092 -08:00 [INF] Handled GET /api/Medicamento/catalogos/tipoArticulo responded 200 in 444.3086 ms
+2026-02-26 21:48:58.095 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoUnidadMedida, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:48:58.162 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetClasificacion (API) in 409.3152ms
+2026-02-26 21:48:58.165 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetPresentacion (API) in 420.2472ms
+2026-02-26 21:48:58.167 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoControl - 200 null application/json; charset=utf-8 573.5404ms
+2026-02-26 21:48:58.170 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - 200 null application/json; charset=utf-8 595.6051ms
+2026-02-26 21:48:58.178 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetUnidadMedida (API) in 349.7196ms
+2026-02-26 21:48:58.178 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetClasificacion (API)'
+2026-02-26 21:48:58.180 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetPresentacion (API)'
+2026-02-26 21:48:58.194 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetUnidadMedida (API)'
+2026-02-26 21:48:58.195 -08:00 [INF] Handled GET /api/Medicamento/catalogos/clasificacion responded 200 in 542.4251 ms
+2026-02-26 21:48:58.196 -08:00 [INF] Handled GET /api/Medicamento/catalogos/presentacion responded 200 in 546.7283 ms
+2026-02-26 21:48:58.198 -08:00 [INF] Handled GET /api/Medicamento/catalogos/unidadMedida responded 200 in 544.1467 ms
+2026-02-26 21:48:58.200 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/clasificacion - 200 null application/json; charset=utf-8 595.3457ms
+2026-02-26 21:48:58.203 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/presentacion - 200 null application/json; charset=utf-8 619.887ms
+2026-02-26 21:48:58.205 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/unidadMedida - 200 null application/json; charset=utf-8 592.0897ms
+2026-02-26 21:52:39.503 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 21:52:39.557 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:52:39.559 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 55.8999ms
+2026-02-26 21:52:39.561 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 21:52:39.575 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:52:39.576 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:52:39.578 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:52:39.580 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:52:39.587 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 21:52:39.598 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 21:52:39.605 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:52:39.608 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 18.301ms
+2026-02-26 21:52:39.611 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:52:39.614 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 37.7956 ms
+2026-02-26 21:52:39.621 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 59.7398ms
+2026-02-26 21:52:39.629 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - null null
+2026-02-26 21:52:39.640 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:52:39.641 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - 204 null null 11.9041ms
+2026-02-26 21:52:39.643 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - application/json null
+2026-02-26 21:52:39.653 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:52:39.655 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:52:39.656 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:52:39.658 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:52:39.659 -08:00 [INF] Route matched with {action = "GetFarmacia", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarmacia() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:52:39.663 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.Farmacia, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:52:39.667 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetFarmacia (API) in 4.8618ms
+2026-02-26 21:52:39.670 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:52:39.671 -08:00 [INF] Handled GET /api/Medicamento/catalogos/farmacia responded 200 in 17.1394 ms
+2026-02-26 21:52:39.674 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - 200 null application/json; charset=utf-8 30.9193ms
+2026-02-26 21:53:00.421 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 21:53:00.682 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:00.684 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 263.5947ms
+2026-02-26 21:53:00.686 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 21:53:00.733 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:00.736 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:00.738 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:00.759 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:53:00.762 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 21:53:00.769 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 21:53:00.773 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:00.778 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 13.6344ms
+2026-02-26 21:53:00.781 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:53:00.782 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 47.2187 ms
+2026-02-26 21:53:00.785 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 99.1766ms
+2026-02-26 21:53:00.795 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - null null
+2026-02-26 21:53:00.799 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:00.801 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - 204 null null 5.8676ms
+2026-02-26 21:53:00.803 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - application/json null
+2026-02-26 21:53:00.818 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:00.819 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:00.821 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:00.823 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:53:00.829 -08:00 [INF] Route matched with {action = "GetFarmacia", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarmacia() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:53:00.836 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.Farmacia, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:00.844 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetFarmacia (API) in 11.3598ms
+2026-02-26 21:53:00.847 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:53:00.849 -08:00 [INF] Handled GET /api/Medicamento/catalogos/farmacia responded 200 in 29.7453 ms
+2026-02-26 21:53:00.854 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - 200 null application/json; charset=utf-8 51.0907ms
+2026-02-26 21:53:36.249 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/logout - null null
+2026-02-26 21:53:36.259 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:36.261 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/logout - 204 null null 12.362ms
+2026-02-26 21:53:36.264 -08:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/logout - application/json 0
+2026-02-26 21:53:36.272 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:36.273 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 21:53:36.275 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:36.276 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.Logout (API)'
+2026-02-26 21:53:36.284 -08:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Logout() on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 21:53:36.326 -08:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2026-02-26 21:53:36.331 -08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-02-26 21:53:36.333 -08:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2026-02-26 21:53:36.339 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-26 21:53:36.381 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Description], [EventType], [IpAddress], [Timestamp], [UserAgent], [UserId], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-26 21:53:36.393 -08:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-02-26 21:53:36.395 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.Logout (API) in 107.9614ms
+2026-02-26 21:53:36.397 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.Logout (API)'
+2026-02-26 21:53:36.399 -08:00 [INF] Handled POST /api/auth/logout responded 204 in 126.1473 ms
+2026-02-26 21:53:36.403 -08:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/logout - 204 null null 139.8276ms
+2026-02-26 21:53:41.080 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-02-26 21:53:41.092 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:41.099 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 18.8723ms
+2026-02-26 21:53:41.101 -08:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 54
+2026-02-26 21:53:41.107 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:41.109 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 21:53:41.113 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 21:53:41.116 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.Login (API)'
+2026-02-26 21:53:41.117 -08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(API.DTOs.Seguridad.LoginDto) on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 21:53:41.131 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-26 21:53:41.309 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-26 21:53:41.317 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-26 21:53:41.329 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 512), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 512), @p8='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserRefreshTokens] ([Created], [CreatedByIp], [Expires], [ReasonRevoked], [ReplacedByTokenHash], [Revoked], [RevokedByIp], [TokenHash], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-02-26 21:53:41.334 -08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType12`4[[<>f__AnonymousType13`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-26 21:53:41.336 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.Login (API) in 216.3139ms
+2026-02-26 21:53:41.338 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.Login (API)'
+2026-02-26 21:53:41.340 -08:00 [INF] Handled POST /api/auth/login responded 200 in 231.0571 ms
+2026-02-26 21:53:41.342 -08:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 241.6363ms
+2026-02-26 21:53:41.385 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 21:53:41.400 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:41.402 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 17.2082ms
+2026-02-26 21:53:41.404 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 21:53:41.491 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:41.493 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 21:53:41.504 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 21:53:41.506 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:53:41.509 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 21:53:41.553 -08:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 21:53:41.591 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:41.605 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 83.9069ms
+2026-02-26 21:53:41.609 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:53:41.617 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 125.0469 ms
+2026-02-26 21:53:41.620 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 216.186ms
+2026-02-26 21:53:41.629 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/user-info - null null
+2026-02-26 21:53:41.641 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:41.643 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/user-info - 204 null null 14.3578ms
+2026-02-26 21:53:41.647 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/auth/user-info - application/json null
+2026-02-26 21:53:41.655 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:41.657 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 21:53:41.659 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 21:53:41.664 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.GetUserInfo (API)'
+2026-02-26 21:53:41.692 -08:00 [INF] Route matched with {action = "GetUserInfo", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUserInfo() on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 21:53:41.754 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2026-02-26 21:53:41.798 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad]
+FROM [Usuarios] AS [u]
+WHERE [u].[AppUserIdentityId] = @__user_Id_0
+2026-02-26 21:53:41.805 -08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType9`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-26 21:53:41.815 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.GetUserInfo (API) in 118.372ms
+2026-02-26 21:53:41.819 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.GetUserInfo (API)'
+2026-02-26 21:53:41.821 -08:00 [INF] Handled GET /api/auth/user-info responded 200 in 164.5120 ms
+2026-02-26 21:53:41.824 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/auth/user-info - 200 null application/json; charset=utf-8 177.3767ms
+2026-02-26 21:53:41.834 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - null null
+2026-02-26 21:53:41.844 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:41.846 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - 204 null null 11.8377ms
+2026-02-26 21:53:41.873 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - application/json null
+2026-02-26 21:53:41.884 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:41.886 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 21:53:41.890 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 21:53:41.892 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.UsersController.GetUser (API)'
+2026-02-26 21:53:41.898 -08:00 [INF] Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[API.DTOs.Seguridad.UserDto]] GetUser(System.String) on controller API.Controllers.Seguridad.UsersController (API).
+2026-02-26 21:53:41.915 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Activo], [s].[AppUserIdentityId], [s].[Atributos], [s].[Calendario], [s].[EsUsuarioAD], [s].[FechaCreacion], [s].[FechaUltimaActualizacion], [s].[GrupoId], [s].[Nombre], [s].[PrimerApellido], [s].[RolId], [s].[SegundoApellido], [s].[Telefono], [s].[TiempoInactividad], [s].[Id0], [u0].[UsuarioId], [u0].[CorporacionId], [s].[AccessFailedCount], [s].[ConcurrencyStamp], [s].[Email], [s].[EmailConfirmed], [s].[FechaCreacion0], [s].[FechaUltimaActualizacion0], [s].[LockoutEnabled], [s].[LockoutEnd], [s].[NormalizedEmail], [s].[NormalizedUserName], [s].[PasswordHash], [s].[PhoneNumber], [s].[PhoneNumberConfirmed], [s].[SecurityStamp], [s].[TwoFactorEnabled], [s].[UserName]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion] AS [FechaCreacion0], [a].[FechaUltimaActualizacion] AS [FechaUltimaActualizacion0], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [Usuarios] AS [u]
+    LEFT JOIN [AspNetUsers] AS [a] ON [u].[AppUserIdentityId] = [a].[Id]
+    WHERE [u].[Id] = @__request_Id_0
+) AS [s]
+LEFT JOIN [UsuarioCorporaciones] AS [u0] ON [s].[Id] = [u0].[UsuarioId]
+ORDER BY [s].[Id], [s].[Id0], [u0].[UsuarioId]
+2026-02-26 21:53:41.922 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Acceso], [p].[ProcesoId], [p].[RolId], [p].[UsuarioId]
+FROM [Permisos] AS [p]
+WHERE [p].[UsuarioId] = @__user_Id_0
+2026-02-26 21:53:41.953 -08:00 [INF] Executing OkObjectResult, writing value of type 'API.DTOs.Seguridad.UserDto'.
+2026-02-26 21:53:41.955 -08:00 [INF] Executed action API.Controllers.Seguridad.UsersController.GetUser (API) in 54.6334ms
+2026-02-26 21:53:41.964 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.UsersController.GetUser (API)'
+2026-02-26 21:53:41.965 -08:00 [INF] Handled GET /api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 responded 200 in 79.9232 ms
+2026-02-26 21:53:41.970 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - 200 null application/json; charset=utf-8 96.9657ms
+2026-02-26 21:53:41.988 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - null null
+2026-02-26 21:53:42.056 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:42.057 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - 204 null null 68.6792ms
+2026-02-26 21:53:42.060 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - application/json null
+2026-02-26 21:53:42.086 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:42.087 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 21:53:42.091 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 21:53:42.094 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.RolController.GetRol (API)'
+2026-02-26 21:53:42.096 -08:00 [INF] Route matched with {action = "GetRol", controller = "Rol"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[API.DTOs.Seguridad.ApplicationRoleDto]] GetRol(System.String) on controller API.Controllers.Seguridad.RolController (API).
+2026-02-26 21:53:42.103 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Id] = @__request_Id_0
+2026-02-26 21:53:42.115 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-02-26 21:53:42.127 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FechaCreacion], [a0].[FechaUltimaActualizacion], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-02-26 21:53:42.142 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__appUserIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad]
+FROM [Usuarios] AS [u]
+WHERE [u].[AppUserIdentityId] IN (
+    SELECT [a].[value]
+    FROM OPENJSON(@__appUserIds_0) WITH ([value] nvarchar(450) '$') AS [a]
+)
+2026-02-26 21:53:42.154 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ToString_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Acciones], [p].[Activo], [p].[Descr], [p].[FechaCreacion], [p].[FechaUltimaActualizacion], [p].[Icono], [p].[ProcesoPadreId], [p].[Ruta], [p].[SistemaId], [p].[Tipo]
+FROM [RolesProcesos] AS [r]
+INNER JOIN [Procesos] AS [p] ON [r].[ProcesoId] = [p].[Id]
+WHERE [r].[RolId] = @__ToString_0
+2026-02-26 21:53:42.159 -08:00 [INF] Executing OkObjectResult, writing value of type 'API.DTOs.Seguridad.ApplicationRoleDto'.
+2026-02-26 21:53:42.163 -08:00 [INF] Executed action API.Controllers.Seguridad.RolController.GetRol (API) in 64.2917ms
+2026-02-26 21:53:42.165 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.RolController.GetRol (API)'
+2026-02-26 21:53:42.167 -08:00 [INF] Handled GET /api/rol/0ce09768-9d22-4286-a855-e09ca14d189f responded 200 in 80.1847 ms
+2026-02-26 21:53:42.170 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - 200 null application/json; charset=utf-8 110.0867ms
+2026-02-26 21:53:46.899 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento?take=200 - null null
+2026-02-26 21:53:46.903 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:46.905 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento?take=200 - 204 null null 6.1834ms
+2026-02-26 21:53:46.907 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento?take=200 - application/json null
+2026-02-26 21:53:46.921 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:46.923 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:46.926 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:46.928 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.List (API)'
+2026-02-26 21:53:46.930 -08:00 [INF] Route matched with {action = "List", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean], System.Nullable`1[System.Int32]) on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:53:47.034 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Clinica.MedicamentoDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:47.038 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.List (API) in 104.3236ms
+2026-02-26 21:53:47.041 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.List (API)'
+2026-02-26 21:53:47.045 -08:00 [INF] Handled GET /api/Medicamento responded 200 in 122.6850 ms
+2026-02-26 21:53:47.048 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento?take=200 - 200 null application/json; charset=utf-8 140.2349ms
+2026-02-26 21:53:49.051 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 21:53:49.060 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.062 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 10.6257ms
+2026-02-26 21:53:49.064 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 21:53:49.070 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.073 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:49.077 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:49.079 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:53:49.081 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 21:53:49.087 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 21:53:49.094 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:49.096 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 12.7069ms
+2026-02-26 21:53:49.099 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:53:49.101 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 28.1743 ms
+2026-02-26 21:53:49.104 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 40.0983ms
+2026-02-26 21:53:49.112 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - null null
+2026-02-26 21:53:49.153 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.154 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - 204 null null 41.8233ms
+2026-02-26 21:53:49.162 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - application/json null
+2026-02-26 21:53:49.166 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.168 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:49.169 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:49.170 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:53:49.172 -08:00 [INF] Route matched with {action = "GetFarmacia", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarmacia() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:53:49.177 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.Farmacia, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:49.179 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetFarmacia (API) in 3.1261ms
+2026-02-26 21:53:49.181 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:53:49.183 -08:00 [INF] Handled GET /api/Medicamento/catalogos/farmacia responded 200 in 15.5864 ms
+2026-02-26 21:53:49.186 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - 200 null application/json; charset=utf-8 23.8368ms
+2026-02-26 21:53:49.206 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - null null
+2026-02-26 21:53:49.206 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/clasificacion - null null
+2026-02-26 21:53:49.208 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/presentacion - null null
+2026-02-26 21:53:49.208 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/unidadMedida - null null
+2026-02-26 21:53:49.209 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoControl - null null
+2026-02-26 21:53:49.218 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.222 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.234 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.254 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/clasificacion - 204 null null 47.4546ms
+2026-02-26 21:53:49.265 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/unidadMedida - 204 null null 56.7634ms
+2026-02-26 21:53:49.249 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - 204 null null 43.4041ms
+2026-02-26 21:53:49.231 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.238 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.253 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - application/json null
+2026-02-26 21:53:49.264 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/clasificacion - application/json null
+2026-02-26 21:53:49.272 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/unidadMedida - application/json null
+2026-02-26 21:53:49.289 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/presentacion - 204 null null 80.3035ms
+2026-02-26 21:53:49.292 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoControl - 204 null null 82.6928ms
+2026-02-26 21:53:49.294 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/presentacion - application/json null
+2026-02-26 21:53:49.294 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoControl - application/json null
+2026-02-26 21:53:49.297 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.301 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.305 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.320 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.325 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:53:49.327 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:49.328 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:49.329 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:49.330 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:49.331 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:53:49.332 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:49.333 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:49.334 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:49.335 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:49.336 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:53:49.338 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoArticulo (API)'
+2026-02-26 21:53:49.339 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetClasificacion (API)'
+2026-02-26 21:53:49.342 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetUnidadMedida (API)'
+2026-02-26 21:53:49.345 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetPresentacion (API)'
+2026-02-26 21:53:49.346 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoControl (API)'
+2026-02-26 21:53:49.348 -08:00 [INF] Route matched with {action = "GetTipoArticulo", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTipoArticulo() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:53:49.349 -08:00 [INF] Route matched with {action = "GetClasificacion", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetClasificacion() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:53:49.352 -08:00 [INF] Route matched with {action = "GetUnidadMedida", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUnidadMedida() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:53:49.359 -08:00 [INF] Route matched with {action = "GetPresentacion", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPresentacion() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:53:49.365 -08:00 [INF] Route matched with {action = "GetTipoControl", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTipoControl() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:53:49.369 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoTipoArticulo, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:49.371 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoClasificacion, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:49.376 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoUnidadMedida, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:49.380 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoPresentacion, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:49.381 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoTipoControl, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:53:49.383 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetTipoArticulo (API) in 14.7445ms
+2026-02-26 21:53:49.384 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetClasificacion (API) in 13.6923ms
+2026-02-26 21:53:49.387 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetUnidadMedida (API) in 11.5713ms
+2026-02-26 21:53:49.389 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetPresentacion (API) in 10.1543ms
+2026-02-26 21:53:49.395 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetTipoControl (API) in 14.0306ms
+2026-02-26 21:53:49.396 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoArticulo (API)'
+2026-02-26 21:53:49.398 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetClasificacion (API)'
+2026-02-26 21:53:49.402 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetUnidadMedida (API)'
+2026-02-26 21:53:49.404 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetPresentacion (API)'
+2026-02-26 21:53:49.406 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoControl (API)'
+2026-02-26 21:53:49.414 -08:00 [INF] Handled GET /api/Medicamento/catalogos/tipoArticulo responded 200 in 87.2668 ms
+2026-02-26 21:53:49.415 -08:00 [INF] Handled GET /api/Medicamento/catalogos/clasificacion responded 200 in 87.5023 ms
+2026-02-26 21:53:49.417 -08:00 [INF] Handled GET /api/Medicamento/catalogos/unidadMedida responded 200 in 88.1988 ms
+2026-02-26 21:53:49.419 -08:00 [INF] Handled GET /api/Medicamento/catalogos/presentacion responded 200 in 89.0357 ms
+2026-02-26 21:53:49.423 -08:00 [INF] Handled GET /api/Medicamento/catalogos/tipoControl responded 200 in 92.0912 ms
+2026-02-26 21:53:49.428 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - 200 null application/json; charset=utf-8 174.7292ms
+2026-02-26 21:53:49.431 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/clasificacion - 200 null application/json; charset=utf-8 166.5183ms
+2026-02-26 21:53:49.435 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/unidadMedida - 200 null application/json; charset=utf-8 162.5642ms
+2026-02-26 21:53:49.438 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/presentacion - 200 null application/json; charset=utf-8 144.5738ms
+2026-02-26 21:53:49.445 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoControl - 200 null application/json; charset=utf-8 150.9194ms
+2026-02-26 21:56:00.768 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 21:56:00.862 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 21:56:00.908 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:56:00.911 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:56:00.940 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 171.8287ms
+2026-02-26 21:56:01.056 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 193.8776ms
+2026-02-26 21:56:01.005 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 21:56:01.095 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:56:01.098 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:56:01.100 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:56:01.102 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:56:01.104 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 21:56:01.114 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 21:56:01.121 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:56:01.124 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 16.4798ms
+2026-02-26 21:56:01.126 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 21:56:01.132 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:56:01.135 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:56:01.136 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 39.3397 ms
+2026-02-26 21:56:01.138 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:56:01.140 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 135.136ms
+2026-02-26 21:56:01.141 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:56:01.151 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:56:01.153 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 21:56:01.155 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - null null
+2026-02-26 21:56:01.161 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:56:01.162 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - 204 null null 6.9289ms
+2026-02-26 21:56:01.170 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - application/json null
+2026-02-26 21:56:01.171 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 21:56:01.177 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:56:01.183 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:56:01.184 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:56:01.186 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 29.2616ms
+2026-02-26 21:56:01.187 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:56:01.189 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:56:01.191 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:56:01.193 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 55.9617 ms
+2026-02-26 21:56:01.197 -08:00 [INF] Route matched with {action = "GetFarmacia", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarmacia() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:56:01.201 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 74.69ms
+2026-02-26 21:56:01.205 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.Farmacia, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:56:01.224 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetFarmacia (API) in 19.1968ms
+2026-02-26 21:56:01.228 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:56:01.231 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - application/json null
+2026-02-26 21:56:01.233 -08:00 [INF] Handled GET /api/Medicamento/catalogos/farmacia responded 200 in 49.1545 ms
+2026-02-26 21:56:01.236 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:56:01.240 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - 200 null application/json; charset=utf-8 69.7714ms
+2026-02-26 21:56:01.243 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:56:01.284 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:56:01.288 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:56:01.290 -08:00 [INF] Route matched with {action = "GetFarmacia", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarmacia() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:56:01.293 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.Farmacia, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:56:01.295 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetFarmacia (API) in 2.896ms
+2026-02-26 21:56:01.315 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:56:01.317 -08:00 [INF] Handled GET /api/Medicamento/catalogos/farmacia responded 200 in 74.0501 ms
+2026-02-26 21:56:01.320 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - 200 null application/json; charset=utf-8 89.0454ms
+2026-02-26 21:57:48.051 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 21:57:48.080 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:57:48.082 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 31.4103ms
+2026-02-26 21:57:48.084 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 21:57:48.097 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:57:48.099 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:57:48.100 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:57:48.101 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:57:48.103 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 21:57:48.124 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 21:57:48.135 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:57:48.138 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 24.6529ms
+2026-02-26 21:57:48.142 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 21:57:48.146 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 47.5362 ms
+2026-02-26 21:57:48.149 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 65.6688ms
+2026-02-26 21:57:48.157 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - null null
+2026-02-26 21:57:48.227 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:57:48.229 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - 204 null null 71.6138ms
+2026-02-26 21:57:48.231 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - application/json null
+2026-02-26 21:57:48.238 -08:00 [INF] CORS policy execution successful.
+2026-02-26 21:57:48.240 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 21:57:48.241 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 21:57:48.244 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:57:48.246 -08:00 [INF] Route matched with {action = "GetFarmacia", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarmacia() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 21:57:48.249 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.Farmacia, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 21:57:48.251 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetFarmacia (API) in 2.7599ms
+2026-02-26 21:57:48.254 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 21:57:48.256 -08:00 [INF] Handled GET /api/Medicamento/catalogos/farmacia responded 200 in 16.0120 ms
+2026-02-26 21:57:48.259 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - 200 null application/json; charset=utf-8 27.1625ms
+2026-02-26 22:00:30.631 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/logout - null null
+2026-02-26 22:00:30.644 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:30.646 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/logout - 204 null null 15.7578ms
+2026-02-26 22:00:30.654 -08:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/logout - application/json 0
+2026-02-26 22:00:30.664 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:30.680 -08:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '27/02/2026 05:54:41 a. m.', Current time (UTC): '27/02/2026 06:00:30 a. m.'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-26 22:00:30.695 -08:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '27/02/2026 05:54:41 a. m.', Current time (UTC): '27/02/2026 06:00:30 a. m.'.
+2026-02-26 22:00:30.697 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:00:30.698 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:00:30.700 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.Logout (API)'
+2026-02-26 22:00:30.702 -08:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Logout() on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 22:00:30.707 -08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-26 22:00:30.710 -08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2026-02-26 22:00:30.714 -08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2026-02-26 22:00:30.727 -08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-26 22:00:30.729 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.Logout (API) in 23.7016ms
+2026-02-26 22:00:30.731 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.Logout (API)'
+2026-02-26 22:00:30.733 -08:00 [INF] Handled POST /api/auth/logout responded 401 in 67.1563 ms
+2026-02-26 22:00:30.736 -08:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/logout - 401 0 null 81.676ms
+2026-02-26 22:00:34.530 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/AuthAzure/logout - null null
+2026-02-26 22:00:34.542 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:34.544 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/AuthAzure/logout - 204 null null 14.0249ms
+2026-02-26 22:00:34.545 -08:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/AuthAzure/logout - application/json 0
+2026-02-26 22:00:34.552 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:34.555 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:00:34.558 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:00:34.559 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthAzureController.Logout (API)'
+2026-02-26 22:00:34.563 -08:00 [INF] Route matched with {action = "Logout", controller = "AuthAzure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Logout() on controller API.Controllers.Seguridad.AuthAzureController (API).
+2026-02-26 22:00:34.566 -08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-26 22:00:34.567 -08:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2026-02-26 22:00:34.569 -08:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2026-02-26 22:00:34.574 -08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-26 22:00:34.576 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthAzureController.Logout (API) in 10.6778ms
+2026-02-26 22:00:34.577 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthAzureController.Logout (API)'
+2026-02-26 22:00:34.579 -08:00 [INF] Handled POST /api/AuthAzure/logout responded 401 in 23.9911 ms
+2026-02-26 22:00:34.581 -08:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/AuthAzure/logout - 401 0 null 35.4371ms
+2026-02-26 22:00:40.223 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-02-26 22:00:40.277 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:40.279 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 55.802ms
+2026-02-26 22:00:40.286 -08:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 54
+2026-02-26 22:00:40.293 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:40.294 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:00:40.295 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:00:40.296 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.Login (API)'
+2026-02-26 22:00:40.298 -08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(API.DTOs.Seguridad.LoginDto) on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 22:00:40.332 -08:00 [INF] Executed DbCommand (27ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-26 22:00:40.765 -08:00 [INF] Executed DbCommand (86ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-26 22:00:41.475 -08:00 [INF] Executed DbCommand (31ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-26 22:00:42.026 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 512), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 512), @p8='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserRefreshTokens] ([Created], [CreatedByIp], [Expires], [ReasonRevoked], [ReplacedByTokenHash], [Revoked], [RevokedByIp], [TokenHash], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-02-26 22:00:43.057 -08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType12`4[[<>f__AnonymousType13`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-26 22:00:43.165 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.Login (API) in 2862.7416ms
+2026-02-26 22:00:43.206 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.Login (API)'
+2026-02-26 22:00:43.209 -08:00 [INF] Handled POST /api/auth/login responded 200 in 2914.8125 ms
+2026-02-26 22:00:43.212 -08:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 2925.9902ms
+2026-02-26 22:00:43.271 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 22:00:43.448 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:43.449 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 178.6065ms
+2026-02-26 22:00:43.458 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 22:00:43.477 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:43.482 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:00:43.487 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:00:43.497 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 22:00:43.499 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 22:00:43.550 -08:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 22:00:43.709 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:00:43.714 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 200.2575ms
+2026-02-26 22:00:43.722 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 22:00:43.730 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 249.3231 ms
+2026-02-26 22:00:43.738 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 279.992ms
+2026-02-26 22:00:43.744 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/user-info - null null
+2026-02-26 22:00:43.762 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:43.764 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/user-info - 204 null null 19.7279ms
+2026-02-26 22:00:43.768 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/auth/user-info - application/json null
+2026-02-26 22:00:43.775 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:43.777 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:00:43.778 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:00:43.779 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.GetUserInfo (API)'
+2026-02-26 22:00:43.781 -08:00 [INF] Route matched with {action = "GetUserInfo", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUserInfo() on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 22:00:43.824 -08:00 [INF] Executed DbCommand (36ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2026-02-26 22:00:43.942 -08:00 [INF] Executed DbCommand (25ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad]
+FROM [Usuarios] AS [u]
+WHERE [u].[AppUserIdentityId] = @__user_Id_0
+2026-02-26 22:00:43.962 -08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType9`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-26 22:00:44.039 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.GetUserInfo (API) in 253.7624ms
+2026-02-26 22:00:44.149 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.GetUserInfo (API)'
+2026-02-26 22:00:44.152 -08:00 [INF] Handled GET /api/auth/user-info responded 200 in 375.9191 ms
+2026-02-26 22:00:44.156 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/auth/user-info - 200 null application/json; charset=utf-8 387.9806ms
+2026-02-26 22:00:44.163 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - null null
+2026-02-26 22:00:44.175 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:44.176 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - 204 null null 12.9372ms
+2026-02-26 22:00:44.182 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - application/json null
+2026-02-26 22:00:44.190 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:44.191 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:00:44.192 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:00:44.197 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.UsersController.GetUser (API)'
+2026-02-26 22:00:44.200 -08:00 [INF] Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[API.DTOs.Seguridad.UserDto]] GetUser(System.String) on controller API.Controllers.Seguridad.UsersController (API).
+2026-02-26 22:00:44.413 -08:00 [INF] Executed DbCommand (21ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Activo], [s].[AppUserIdentityId], [s].[Atributos], [s].[Calendario], [s].[EsUsuarioAD], [s].[FechaCreacion], [s].[FechaUltimaActualizacion], [s].[GrupoId], [s].[Nombre], [s].[PrimerApellido], [s].[RolId], [s].[SegundoApellido], [s].[Telefono], [s].[TiempoInactividad], [s].[Id0], [u0].[UsuarioId], [u0].[CorporacionId], [s].[AccessFailedCount], [s].[ConcurrencyStamp], [s].[Email], [s].[EmailConfirmed], [s].[FechaCreacion0], [s].[FechaUltimaActualizacion0], [s].[LockoutEnabled], [s].[LockoutEnd], [s].[NormalizedEmail], [s].[NormalizedUserName], [s].[PasswordHash], [s].[PhoneNumber], [s].[PhoneNumberConfirmed], [s].[SecurityStamp], [s].[TwoFactorEnabled], [s].[UserName]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion] AS [FechaCreacion0], [a].[FechaUltimaActualizacion] AS [FechaUltimaActualizacion0], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [Usuarios] AS [u]
+    LEFT JOIN [AspNetUsers] AS [a] ON [u].[AppUserIdentityId] = [a].[Id]
+    WHERE [u].[Id] = @__request_Id_0
+) AS [s]
+LEFT JOIN [UsuarioCorporaciones] AS [u0] ON [s].[Id] = [u0].[UsuarioId]
+ORDER BY [s].[Id], [s].[Id0], [u0].[UsuarioId]
+2026-02-26 22:00:44.452 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Acceso], [p].[ProcesoId], [p].[RolId], [p].[UsuarioId]
+FROM [Permisos] AS [p]
+WHERE [p].[UsuarioId] = @__user_Id_0
+2026-02-26 22:00:44.456 -08:00 [INF] Executing OkObjectResult, writing value of type 'API.DTOs.Seguridad.UserDto'.
+2026-02-26 22:00:44.462 -08:00 [INF] Executed action API.Controllers.Seguridad.UsersController.GetUser (API) in 73.3943ms
+2026-02-26 22:00:44.471 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.UsersController.GetUser (API)'
+2026-02-26 22:00:44.496 -08:00 [INF] Handled GET /api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 responded 200 in 304.7922 ms
+2026-02-26 22:00:44.499 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - 200 null application/json; charset=utf-8 317.583ms
+2026-02-26 22:00:44.578 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - null null
+2026-02-26 22:00:44.754 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:44.755 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - 204 null null 177.5003ms
+2026-02-26 22:00:44.757 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - application/json null
+2026-02-26 22:00:44.763 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:44.764 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:00:44.765 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:00:44.770 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.RolController.GetRol (API)'
+2026-02-26 22:00:44.775 -08:00 [INF] Route matched with {action = "GetRol", controller = "Rol"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[API.DTOs.Seguridad.ApplicationRoleDto]] GetRol(System.String) on controller API.Controllers.Seguridad.RolController (API).
+2026-02-26 22:00:44.786 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Id] = @__request_Id_0
+2026-02-26 22:00:44.796 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-02-26 22:00:44.812 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FechaCreacion], [a0].[FechaUltimaActualizacion], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-02-26 22:00:44.893 -08:00 [INF] Executed DbCommand (37ms) [Parameters=[@__appUserIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad]
+FROM [Usuarios] AS [u]
+WHERE [u].[AppUserIdentityId] IN (
+    SELECT [a].[value]
+    FROM OPENJSON(@__appUserIds_0) WITH ([value] nvarchar(450) '$') AS [a]
+)
+2026-02-26 22:00:44.990 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__ToString_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Acciones], [p].[Activo], [p].[Descr], [p].[FechaCreacion], [p].[FechaUltimaActualizacion], [p].[Icono], [p].[ProcesoPadreId], [p].[Ruta], [p].[SistemaId], [p].[Tipo]
+FROM [RolesProcesos] AS [r]
+INNER JOIN [Procesos] AS [p] ON [r].[ProcesoId] = [p].[Id]
+WHERE [r].[RolId] = @__ToString_0
+2026-02-26 22:00:44.995 -08:00 [INF] Executing OkObjectResult, writing value of type 'API.DTOs.Seguridad.ApplicationRoleDto'.
+2026-02-26 22:00:44.999 -08:00 [INF] Executed action API.Controllers.Seguridad.RolController.GetRol (API) in 222.4821ms
+2026-02-26 22:00:45.004 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.RolController.GetRol (API)'
+2026-02-26 22:00:45.006 -08:00 [INF] Handled GET /api/rol/0ce09768-9d22-4286-a855-e09ca14d189f responded 200 in 241.5240 ms
+2026-02-26 22:00:45.009 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - 200 null application/json; charset=utf-8 252.2822ms
+2026-02-26 22:00:50.593 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento?take=200 - null null
+2026-02-26 22:00:50.729 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:50.736 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento?take=200 - 204 null null 142.5757ms
+2026-02-26 22:00:50.738 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento?take=200 - application/json null
+2026-02-26 22:00:50.747 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:00:50.754 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:00:50.755 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:00:50.756 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.List (API)'
+2026-02-26 22:00:50.757 -08:00 [INF] Route matched with {action = "List", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean], System.Nullable`1[System.Int32]) on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 22:00:51.074 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Clinica.MedicamentoDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:00:51.227 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.List (API) in 467.9871ms
+2026-02-26 22:00:51.240 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.List (API)'
+2026-02-26 22:00:51.242 -08:00 [INF] Handled GET /api/Medicamento responded 200 in 488.4244 ms
+2026-02-26 22:00:51.247 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento?take=200 - 200 null application/json; charset=utf-8 509.0969ms
+2026-02-26 22:03:05.683 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/logout - null null
+2026-02-26 22:03:05.696 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:05.698 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/logout - 204 null null 14.5301ms
+2026-02-26 22:03:05.710 -08:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/logout - application/json 0
+2026-02-26 22:03:05.726 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:05.727 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:03:05.729 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:05.730 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.Logout (API)'
+2026-02-26 22:03:05.732 -08:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Logout() on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 22:03:05.734 -08:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2026-02-26 22:03:05.739 -08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-02-26 22:03:05.742 -08:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2026-02-26 22:03:05.751 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-26 22:03:05.762 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AuditLogs] ([Description], [EventType], [IpAddress], [Timestamp], [UserAgent], [UserId], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-26 22:03:05.766 -08:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2026-02-26 22:03:05.768 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.Logout (API) in 33.7426ms
+2026-02-26 22:03:05.774 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.Logout (API)'
+2026-02-26 22:03:05.776 -08:00 [INF] Handled POST /api/auth/logout responded 204 in 48.6071 ms
+2026-02-26 22:03:05.779 -08:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/logout - 204 null null 69.0986ms
+2026-02-26 22:03:12.441 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/login - null null
+2026-02-26 22:03:12.449 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:12.457 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/login - 204 null null 15.7723ms
+2026-02-26 22:03:12.461 -08:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/auth/login - application/json 54
+2026-02-26 22:03:12.477 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:12.479 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:03:12.480 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:03:12.481 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.Login (API)'
+2026-02-26 22:03:12.483 -08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(API.DTOs.Seguridad.LoginDto) on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 22:03:12.495 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-26 22:03:12.646 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-26 22:03:12.656 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-26 22:03:12.673 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 512), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 512), @p8='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserRefreshTokens] ([Created], [CreatedByIp], [Expires], [ReasonRevoked], [ReplacedByTokenHash], [Revoked], [RevokedByIp], [TokenHash], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-02-26 22:03:12.690 -08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType12`4[[<>f__AnonymousType13`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-26 22:03:12.692 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.Login (API) in 204.2848ms
+2026-02-26 22:03:12.694 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.Login (API)'
+2026-02-26 22:03:12.696 -08:00 [INF] Handled POST /api/auth/login responded 200 in 217.3147 ms
+2026-02-26 22:03:12.699 -08:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/auth/login - 200 null application/json; charset=utf-8 238.1034ms
+2026-02-26 22:03:12.727 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 22:03:12.737 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:12.755 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 28.2843ms
+2026-02-26 22:03:12.758 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 22:03:12.780 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:12.782 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:03:12.786 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:03:12.795 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 22:03:12.797 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 22:03:12.822 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 22:03:12.828 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:12.830 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 28.6507ms
+2026-02-26 22:03:12.835 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 22:03:12.841 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 59.9901 ms
+2026-02-26 22:03:12.847 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 88.9978ms
+2026-02-26 22:03:12.855 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/auth/user-info - null null
+2026-02-26 22:03:12.863 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:12.865 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/auth/user-info - 204 null null 9.8725ms
+2026-02-26 22:03:12.868 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/auth/user-info - application/json null
+2026-02-26 22:03:12.884 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:12.886 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:03:12.895 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:03:12.897 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.AuthController.GetUserInfo (API)'
+2026-02-26 22:03:12.899 -08:00 [INF] Route matched with {action = "GetUserInfo", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUserInfo() on controller API.Controllers.Seguridad.AuthController (API).
+2026-02-26 22:03:12.982 -08:00 [INF] Executed DbCommand (26ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2026-02-26 22:03:13.008 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad]
+FROM [Usuarios] AS [u]
+WHERE [u].[AppUserIdentityId] = @__user_Id_0
+2026-02-26 22:03:13.014 -08:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`4[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType9`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-26 22:03:13.025 -08:00 [INF] Executed action API.Controllers.Seguridad.AuthController.GetUserInfo (API) in 72.4716ms
+2026-02-26 22:03:13.032 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.AuthController.GetUserInfo (API)'
+2026-02-26 22:03:13.041 -08:00 [INF] Handled GET /api/auth/user-info responded 200 in 155.5810 ms
+2026-02-26 22:03:13.045 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/auth/user-info - 200 null application/json; charset=utf-8 177.1749ms
+2026-02-26 22:03:13.053 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - null null
+2026-02-26 22:03:13.096 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:13.097 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - 204 null null 43.8632ms
+2026-02-26 22:03:13.104 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - application/json null
+2026-02-26 22:03:13.108 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:13.129 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:03:13.163 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:03:13.207 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.UsersController.GetUser (API)'
+2026-02-26 22:03:13.210 -08:00 [INF] Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[API.DTOs.Seguridad.UserDto]] GetUser(System.String) on controller API.Controllers.Seguridad.UsersController (API).
+2026-02-26 22:03:13.224 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Activo], [s].[AppUserIdentityId], [s].[Atributos], [s].[Calendario], [s].[EsUsuarioAD], [s].[FechaCreacion], [s].[FechaUltimaActualizacion], [s].[GrupoId], [s].[Nombre], [s].[PrimerApellido], [s].[RolId], [s].[SegundoApellido], [s].[Telefono], [s].[TiempoInactividad], [s].[Id0], [u0].[UsuarioId], [u0].[CorporacionId], [s].[AccessFailedCount], [s].[ConcurrencyStamp], [s].[Email], [s].[EmailConfirmed], [s].[FechaCreacion0], [s].[FechaUltimaActualizacion0], [s].[LockoutEnabled], [s].[LockoutEnd], [s].[NormalizedEmail], [s].[NormalizedUserName], [s].[PasswordHash], [s].[PhoneNumber], [s].[PhoneNumberConfirmed], [s].[SecurityStamp], [s].[TwoFactorEnabled], [s].[UserName]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FechaCreacion] AS [FechaCreacion0], [a].[FechaUltimaActualizacion] AS [FechaUltimaActualizacion0], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [Usuarios] AS [u]
+    LEFT JOIN [AspNetUsers] AS [a] ON [u].[AppUserIdentityId] = [a].[Id]
+    WHERE [u].[Id] = @__request_Id_0
+) AS [s]
+LEFT JOIN [UsuarioCorporaciones] AS [u0] ON [s].[Id] = [u0].[UsuarioId]
+ORDER BY [s].[Id], [s].[Id0], [u0].[UsuarioId]
+2026-02-26 22:03:13.236 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Acceso], [p].[ProcesoId], [p].[RolId], [p].[UsuarioId]
+FROM [Permisos] AS [p]
+WHERE [p].[UsuarioId] = @__user_Id_0
+2026-02-26 22:03:13.240 -08:00 [INF] Executing OkObjectResult, writing value of type 'API.DTOs.Seguridad.UserDto'.
+2026-02-26 22:03:13.242 -08:00 [INF] Executed action API.Controllers.Seguridad.UsersController.GetUser (API) in 28.2045ms
+2026-02-26 22:03:13.253 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.UsersController.GetUser (API)'
+2026-02-26 22:03:13.255 -08:00 [INF] Handled GET /api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 responded 200 in 126.5625 ms
+2026-02-26 22:03:13.258 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Users/8239ccfc-7beb-4b05-9459-6215a2c858c3 - 200 null application/json; charset=utf-8 153.5455ms
+2026-02-26 22:03:13.267 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - null null
+2026-02-26 22:03:13.279 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:13.280 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - 204 null null 12.6797ms
+2026-02-26 22:03:13.282 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - application/json null
+2026-02-26 22:03:13.291 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:13.292 -08:00 [WRN] CorporacionId no encontrado en los headers.
+2026-02-26 22:03:13.293 -08:00 [INF] SistemaId recibido: 1
+2026-02-26 22:03:13.295 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.RolController.GetRol (API)'
+2026-02-26 22:03:13.296 -08:00 [INF] Route matched with {action = "GetRol", controller = "Rol"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[API.DTOs.Seguridad.ApplicationRoleDto]] GetRol(System.String) on controller API.Controllers.Seguridad.RolController (API).
+2026-02-26 22:03:13.306 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Id] = @__request_Id_0
+2026-02-26 22:03:13.317 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Activo], [a].[ConcurrencyStamp], [a].[Descripcion], [a].[FechaCreacion], [a].[FechaUltimaActualizacion], [a].[Name], [a].[NormalizedName], [a].[TipoRol], [a].[Value]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-02-26 22:03:13.332 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FechaCreacion], [a0].[FechaUltimaActualizacion], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-02-26 22:03:13.343 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__appUserIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Activo], [u].[AppUserIdentityId], [u].[Atributos], [u].[Calendario], [u].[EsUsuarioAD], [u].[FechaCreacion], [u].[FechaUltimaActualizacion], [u].[GrupoId], [u].[Nombre], [u].[PrimerApellido], [u].[RolId], [u].[SegundoApellido], [u].[Telefono], [u].[TiempoInactividad]
+FROM [Usuarios] AS [u]
+WHERE [u].[AppUserIdentityId] IN (
+    SELECT [a].[value]
+    FROM OPENJSON(@__appUserIds_0) WITH ([value] nvarchar(450) '$') AS [a]
+)
+2026-02-26 22:03:13.354 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ToString_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Acciones], [p].[Activo], [p].[Descr], [p].[FechaCreacion], [p].[FechaUltimaActualizacion], [p].[Icono], [p].[ProcesoPadreId], [p].[Ruta], [p].[SistemaId], [p].[Tipo]
+FROM [RolesProcesos] AS [r]
+INNER JOIN [Procesos] AS [p] ON [r].[ProcesoId] = [p].[Id]
+WHERE [r].[RolId] = @__ToString_0
+2026-02-26 22:03:13.358 -08:00 [INF] Executing OkObjectResult, writing value of type 'API.DTOs.Seguridad.ApplicationRoleDto'.
+2026-02-26 22:03:13.361 -08:00 [INF] Executed action API.Controllers.Seguridad.RolController.GetRol (API) in 61.7734ms
+2026-02-26 22:03:13.363 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.RolController.GetRol (API)'
+2026-02-26 22:03:13.365 -08:00 [INF] Handled GET /api/rol/0ce09768-9d22-4286-a855-e09ca14d189f responded 200 in 72.9573 ms
+2026-02-26 22:03:13.369 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/rol/0ce09768-9d22-4286-a855-e09ca14d189f - 200 null application/json; charset=utf-8 87.3093ms
+2026-02-26 22:03:17.557 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento?take=200 - null null
+2026-02-26 22:03:17.571 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:17.573 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento?take=200 - 204 null null 15.9548ms
+2026-02-26 22:03:17.575 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento?take=200 - application/json null
+2026-02-26 22:03:17.595 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:17.596 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:17.599 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:17.604 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.List (API)'
+2026-02-26 22:03:17.606 -08:00 [INF] Route matched with {action = "List", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean], System.Nullable`1[System.Int32]) on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 22:03:17.695 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Clinica.MedicamentoDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:17.700 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.List (API) in 91.49ms
+2026-02-26 22:03:17.705 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.List (API)'
+2026-02-26 22:03:17.707 -08:00 [INF] Handled GET /api/Medicamento responded 200 in 110.8860 ms
+2026-02-26 22:03:17.710 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento?take=200 - 200 null application/json; charset=utf-8 134.9149ms
+2026-02-26 22:03:18.687 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 22:03:18.700 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.702 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 15.1389ms
+2026-02-26 22:03:18.704 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 22:03:18.711 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.712 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:18.713 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:18.715 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 22:03:18.717 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 22:03:18.723 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 22:03:18.727 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:18.730 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 9.2963ms
+2026-02-26 22:03:18.737 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 22:03:18.739 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 27.3412 ms
+2026-02-26 22:03:18.742 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 38.4421ms
+2026-02-26 22:03:18.752 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - null null
+2026-02-26 22:03:18.757 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.758 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - 204 null null 6.4582ms
+2026-02-26 22:03:18.762 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - application/json null
+2026-02-26 22:03:18.772 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.774 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:18.778 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:18.788 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 22:03:18.790 -08:00 [INF] Route matched with {action = "GetFarmacia", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarmacia() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 22:03:18.793 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.Farmacia, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:18.795 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetFarmacia (API) in 2.6679ms
+2026-02-26 22:03:18.805 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 22:03:18.807 -08:00 [INF] Handled GET /api/Medicamento/catalogos/farmacia responded 200 in 34.0168 ms
+2026-02-26 22:03:18.810 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - 200 null application/json; charset=utf-8 48.0203ms
+2026-02-26 22:03:18.833 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - null null
+2026-02-26 22:03:18.833 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/clasificacion - null null
+2026-02-26 22:03:18.836 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/unidadMedida - null null
+2026-02-26 22:03:18.835 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/presentacion - null null
+2026-02-26 22:03:18.846 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.843 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoControl - null null
+2026-02-26 22:03:18.858 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.862 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.909 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/clasificacion - 204 null null 76.6252ms
+2026-02-26 22:03:18.869 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.872 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - 204 null null 39.5422ms
+2026-02-26 22:03:18.907 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.904 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - application/json null
+2026-02-26 22:03:18.949 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/clasificacion - application/json null
+2026-02-26 22:03:18.951 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/unidadMedida - 204 null null 115.3307ms
+2026-02-26 22:03:18.954 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/unidadMedida - application/json null
+2026-02-26 22:03:18.958 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/presentacion - 204 null null 122.7453ms
+2026-02-26 22:03:18.960 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/presentacion - application/json null
+2026-02-26 22:03:18.964 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/tipoControl - 204 null null 120.2926ms
+2026-02-26 22:03:18.967 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoControl - application/json null
+2026-02-26 22:03:18.970 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.973 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:18.992 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:19.002 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:19.003 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:18.983 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:19.033 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:19.036 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:19.037 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:19.038 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:19.040 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:19.043 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:19.044 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:19.046 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:19.047 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoArticulo (API)'
+2026-02-26 22:03:19.053 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:19.054 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetClasificacion (API)'
+2026-02-26 22:03:19.055 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetPresentacion (API)'
+2026-02-26 22:03:19.056 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoControl (API)'
+2026-02-26 22:03:19.064 -08:00 [INF] Route matched with {action = "GetTipoControl", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTipoControl() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 22:03:19.059 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetUnidadMedida (API)'
+2026-02-26 22:03:19.061 -08:00 [INF] Route matched with {action = "GetClasificacion", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetClasificacion() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 22:03:19.062 -08:00 [INF] Route matched with {action = "GetPresentacion", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPresentacion() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 22:03:19.058 -08:00 [INF] Route matched with {action = "GetTipoArticulo", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTipoArticulo() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 22:03:19.069 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoTipoControl, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:19.069 -08:00 [INF] Route matched with {action = "GetUnidadMedida", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUnidadMedida() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 22:03:19.073 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoClasificacion, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:19.076 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoPresentacion, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:19.078 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoTipoArticulo, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:19.079 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetTipoControl (API) in 11.3823ms
+2026-02-26 22:03:19.088 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.MedicamentoUnidadMedida, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:19.102 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetClasificacion (API) in 29.5205ms
+2026-02-26 22:03:19.104 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetPresentacion (API) in 29.7157ms
+2026-02-26 22:03:19.114 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetPresentacion (API)'
+2026-02-26 22:03:19.108 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoControl (API)'
+2026-02-26 22:03:19.110 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetUnidadMedida (API) in 23.2805ms
+2026-02-26 22:03:19.112 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetClasificacion (API)'
+2026-02-26 22:03:19.106 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetTipoArticulo (API) in 29.2224ms
+2026-02-26 22:03:19.121 -08:00 [INF] Handled GET /api/Medicamento/catalogos/presentacion responded 200 in 85.2819 ms
+2026-02-26 22:03:19.123 -08:00 [INF] Handled GET /api/Medicamento/catalogos/tipoControl responded 200 in 85.5050 ms
+2026-02-26 22:03:19.125 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetUnidadMedida (API)'
+2026-02-26 22:03:19.126 -08:00 [INF] Handled GET /api/Medicamento/catalogos/clasificacion responded 200 in 93.6623 ms
+2026-02-26 22:03:19.129 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetTipoArticulo (API)'
+2026-02-26 22:03:19.134 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/presentacion - 200 null application/json; charset=utf-8 174.6333ms
+2026-02-26 22:03:19.141 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoControl - 200 null application/json; charset=utf-8 174.3568ms
+2026-02-26 22:03:19.144 -08:00 [INF] Handled GET /api/Medicamento/catalogos/unidadMedida responded 200 in 103.8018 ms
+2026-02-26 22:03:19.146 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/clasificacion - 200 null application/json; charset=utf-8 197.3141ms
+2026-02-26 22:03:19.150 -08:00 [INF] Handled GET /api/Medicamento/catalogos/tipoArticulo responded 200 in 147.0193 ms
+2026-02-26 22:03:19.175 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/unidadMedida - 200 null application/json; charset=utf-8 221.047ms
+2026-02-26 22:03:19.188 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/tipoArticulo - 200 null application/json; charset=utf-8 283.6508ms
+2026-02-26 22:03:40.797 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - null null
+2026-02-26 22:03:40.856 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:40.858 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Corporacion - 204 null null 60.7026ms
+2026-02-26 22:03:40.860 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Corporacion - application/json null
+2026-02-26 22:03:40.867 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:40.869 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:40.871 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:40.874 -08:00 [INF] Executing endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 22:03:40.877 -08:00 [INF] Route matched with {action = "GetCorporaciones", controller = "Corporacion"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[API.DTOs.Seguridad.CorporacionDTO]]] GetCorporaciones() on controller API.Controllers.Seguridad.CorporacionController (API).
+2026-02-26 22:03:40.884 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Descripcion], [c].[Logo], [c].[LogoDerechoReporte], [c].[Nombre]
+FROM [Corporaciones] AS [c]
+2026-02-26 22:03:40.890 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.DTOs.Seguridad.CorporacionDTO, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:40.896 -08:00 [INF] Executed action API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API) in 15.347ms
+2026-02-26 22:03:40.900 -08:00 [INF] Executed endpoint 'API.Controllers.Seguridad.CorporacionController.GetCorporaciones (API)'
+2026-02-26 22:03:40.903 -08:00 [INF] Handled GET /api/Corporacion responded 200 in 33.6538 ms
+2026-02-26 22:03:40.907 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Corporacion - 200 null application/json; charset=utf-8 46.6162ms
+2026-02-26 22:03:40.916 -08:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - null null
+2026-02-26 22:03:40.932 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:40.933 -08:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5001/api/Medicamento/catalogos/farmacia - 204 null null 17.6161ms
+2026-02-26 22:03:40.935 -08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - application/json null
+2026-02-26 22:03:40.947 -08:00 [INF] CORS policy execution successful.
+2026-02-26 22:03:40.949 -08:00 [INF] CorporacionId recibido: 0d0d599b-2a62-4901-aca1-bfb46d4ffdc7
+2026-02-26 22:03:40.951 -08:00 [INF] SistemaId recibido: 2
+2026-02-26 22:03:40.952 -08:00 [INF] Executing endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 22:03:40.954 -08:00 [INF] Route matched with {action = "GetFarmacia", controller = "Medicamento"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFarmacia() on controller API.Controllers.Clinica.MedicamentoController (API).
+2026-02-26 22:03:40.958 -08:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[API.Domain.Clinica.Farmacia, API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-26 22:03:40.960 -08:00 [INF] Executed action API.Controllers.Clinica.MedicamentoController.GetFarmacia (API) in 3.0399ms
+2026-02-26 22:03:40.962 -08:00 [INF] Executed endpoint 'API.Controllers.Clinica.MedicamentoController.GetFarmacia (API)'
+2026-02-26 22:03:40.964 -08:00 [INF] Handled GET /api/Medicamento/catalogos/farmacia responded 200 in 15.3991 ms
+2026-02-26 22:03:40.967 -08:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Medicamento/catalogos/farmacia - 200 null application/json; charset=utf-8 31.3805ms

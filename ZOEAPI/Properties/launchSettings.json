@@ -1,0 +1,17 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:5002",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AZURE_CLIENT_ID": "ffbfa28d-b4ce-4518-964e-abfde9b6ac3e",
+        "AZURE_TENANT_ID": "db98f798-c12a-478e-831e-0d70af705cab",
+        "AZURE_CLIENT_SECRET": "SfJ8Q~DehsgZv_NTTm35Q9ZRCn5T3~RtVgr5vdjV"
+      }
+    }
+  }
+}
