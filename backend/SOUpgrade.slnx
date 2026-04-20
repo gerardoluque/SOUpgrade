@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SOUpgrade.API/SOUpgrade.API.csproj" />
+    <Project Path="src/SOUpgrade.Application/SOUpgrade.Application.csproj" />
+    <Project Path="src/SOUpgrade.Domain/SOUpgrade.Domain.csproj" />
+    <Project Path="src/SOUpgrade.Infrastructure/SOUpgrade.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SOUpgrade.Application.Tests/SOUpgrade.Application.Tests.csproj" />
+    <Project Path="tests/SOUpgrade.Domain.Tests/SOUpgrade.Domain.Tests.csproj" />
+  </Folder>
+</Solution>
